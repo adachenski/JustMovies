@@ -1,0 +1,23 @@
+{
+  "name": "justmovies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adachenski/JustMovies.git"
+  },
+  "author": "Atanas Dachenski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adachenski/JustMovies/issues"
+  },
+  "homepage": "https://github.com/adachenski/JustMovies#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "justmovies",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Atanas Dachenski"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/adachenski/JustMovies",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "bootstrap": "^3.3.7"
+  }
+}
