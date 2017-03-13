@@ -1,13 +1,22 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navigationbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="#">Just Movies</a>
         </div>
-        <ul class="nav navbar-nav">
-            <li><a ui-sref="movieApp">Home</a></li>
-            <li><a ui-sref="movieApp.now">Now Playing</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navigationbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ui-sref="movieApp">Home</a></li>
+                <li><a ui-sref="movieApp.now">Now Playing</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
+        </div>
     </div>
 </nav>

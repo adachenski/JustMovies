@@ -1,0 +1,53 @@
+ul > li {
+    display: inline-block;
+    list-style: none;
+}
+
+.card {
+    padding: 20px;
+}
+
+.card > div {
+    background-color: #ffffff;
+
+}
+.card-img{
+    padding: 0;
+}
+
+.card-title{
+
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.card-title>div:first-child{
+    display:inline-block;
+    width:130px;
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+}
+.card-content{
+    padding: 30px 10px 30px 10px;
+    font-size: 0.9em;
+    max-height: 130px;
+    overflow-y: hidden;
+}
+.card-content>div:first-child{
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;     /* fallback */
+    max-height: 64px;      /* fallback */
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+.btn-bot{
+    position:absolute;
+    margin-left:-50px;
+    left:70%;
+    width:100px;
+    bottom:10px;
+}

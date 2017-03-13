@@ -2,4 +2,27 @@
     <h1>Body Container</h1>
 
     <div>{{hello}}</div>
+    <div class="row">
+
+        <div class="col-sm-6">
+            <h2>Up comming movies</h2>
+            <ul class="row">
+
+                <li class="col-sm-6" ng-repeat="movie in upComming.results | limitTo: 3">
+                    <movie-cell movie="movie"></movie-cell>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-6">
+            <h2>Now playing movies</h2>
+            <ul class="row">
+
+                <li class="col-sm-6" ng-repeat="movie in getPlaying.results | limitTo: 3">
+                    <movie-cell movie="movie"></movie-cell>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 </div>

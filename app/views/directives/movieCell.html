@@ -1,0 +1,25 @@
+<div class="row" style="position: relative;">
+
+    <div class="col-xs-5 card-img">
+        <img width="100%" ng-src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt=""/>
+    </div>
+
+    <div class="col-xs-7">
+
+        <div class="row card-title">
+
+            <div class="col-xs-10">{{movie.original_title}}</div>
+            <div class="col-xs-2">&#x2605{{movie.vote_average}}</div>
+        </div>
+
+        <div class="row card-content">
+            <div class="cow-xs-6">{{movie.overview}}</div>
+        </div>
+    </div>
+
+    <button class="btn btn-bot">More Info</button>
+
+
+    <!--<img width="200" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" alt=""/>-->
+
+</div>

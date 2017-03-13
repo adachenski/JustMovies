@@ -1,3 +1,17 @@
-<div class="container">
-    <h1>Now Playnig</h1>
+
+<div class="container-fluid" style="background-color: lightgray">
+
+    <div class="container">
+
+
+        <h1>Now Playnig</h1>
+
+        <ul class="row">
+
+            <li class="col-lg-4 col-sm-6 col-xs-12 card" ng-repeat="movie in getPlaying.results">
+                <movie-cell movie="movie"></movie-cell>
+            </li>
+        </ul>
+
+    </div>
 </div>

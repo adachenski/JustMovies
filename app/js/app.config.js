@@ -21,7 +21,8 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             url: 'now-playing',
             views: {
                 'body-container@': {
-                    templateUrl: 'views/nowPlaying.html'
+                    templateUrl: 'views/nowPlaying.html',
+                    controller: 'NowPlayingController'
                 }
             }
         });
