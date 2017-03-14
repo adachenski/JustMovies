@@ -3,15 +3,8 @@
  */
 'use strict';
 
-//movieApp.controller('SingleMovieController', function ($scope, $routeParams,$route, getMovie) {
-//    $scope.singleMovie='nASKO';
-//    //$scope.singleMovie = getMovie.getMov($routeParams.eventId);
-//});
-
-
-movieApp.controller('SingleMovieController',function($scope,$stateParams, getMovie){
-console.log($stateParams.eventId);
-    $scope.customer = getMovie.getMov($stateParams.eventId);
-    console.log($scope.customer);
+movieApp.controller('SingleMovieController',function($scope,$stateParams, singleMovieService){
+//console.log($stateParams.eventId);
+    $scope.singleMovie = singleMovieService.getMov($stateParams.eventId);
+    console.log($scope.singleMovie);
 });
-//SingleMovieController.$inject =['$scope','$routeParams', 'getNowPlaying'];

@@ -17,15 +17,15 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             }
         })
         .state('movieApp.now', {
-            url: 'all-movies',
+            url: 'movies',
             views: {
                 'body-container@': {
                     templateUrl: 'views/nowPlaying.html',
-                    controller: 'NowPlayingController'
+                    controller: 'MovieController'
                 }
             }
         }).state('movieApp.single',{
-            url: 'now-playing/:eventId',
+            url: 'movies/:eventId',
             views: {
                 'body-container@': {
                     templateUrl: 'views/singleMovie.html',

@@ -6,8 +6,8 @@
 
 movieApp.controller('HomeController',HomeController);
 
-function HomeController($scope, getNowPlaying,upComming){
+function HomeController($scope, movieService,upComming){
     $scope.hello = 'Hello Angular';
-    $scope.getPlaying = getNowPlaying;
+    $scope.getPlaying = movieService.getAllMovies();
     $scope.upComming = upComming;
 }
