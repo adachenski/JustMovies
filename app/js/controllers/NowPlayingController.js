@@ -4,7 +4,7 @@
 
 'use strict';
 
-movieApp.controller('NowPlayingController',function($scope, getNowPlaying){
+movieApp.controller('NowPlayingController',function($scope,getNowPlaying){
 
-    $scope.getPlaying = getNowPlaying;
+    $scope.getPlaying = getNowPlaying.getAllMovies();
 });

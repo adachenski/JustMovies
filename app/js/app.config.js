@@ -3,7 +3,6 @@
  */
 
 movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/');
     $stateProvider
         .state('movieApp', {
             url: '/',
@@ -18,14 +17,29 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             }
         })
         .state('movieApp.now', {
-            url: 'now-playing',
+            url: 'all-movies',
             views: {
                 'body-container@': {
                     templateUrl: 'views/nowPlaying.html',
                     controller: 'NowPlayingController'
                 }
             }
+        }).state('movieApp.single',{
+            url: 'now-playing/:eventId',
+            views: {
+                'body-container@': {
+                    templateUrl: 'views/singleMovie.html',
+                    controller: 'SingleMovieController'
+                }
+            }
+            //resolve:{
+            //    getMovie:'getMovie',
+            //    customer:function(getMovie, $stateParams){
+            //        var eventId = $stateParams.eventId;
+            //        return getMovie.get({eventId:eventId}).$promise;
+            //    }
+            //}
         });
-
+    $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
 });
