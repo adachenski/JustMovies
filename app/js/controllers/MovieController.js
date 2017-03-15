@@ -4,7 +4,18 @@
 
 'use strict';
 
-movieApp.controller('MovieController',function($scope,movieService){
+movieApp.controller('MovieController',function($scope,$state,$stateParams, movieService){
 
-    $scope.getPlaying = movieService.getAllMovies();
+    $scope.sortOrder = {
+        "type": "select",
+        "name": "Service",
+        "value": "now_playing"
+    };
+
+    $scope.reload = function(){
+        console.log($scope.sortOrder.value);
+        $scope.getPlaying = movieService.getAllMovies($scope.sortOrder.value);
+    };
+
+    $scope.getPlaying = movieService.getAllMovies($scope.sortOrder.value);
 });

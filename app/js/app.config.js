@@ -16,7 +16,7 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
                 }
             }
         })
-        .state('movieApp.now', {
+        .state('movieApp.movies', {
             url: 'movies',
             views: {
                 'body-container@': {
