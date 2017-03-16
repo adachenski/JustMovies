@@ -1,3 +1,51 @@
+<style>
+    .reset-padding{
+        padding: 0;
+    }
+
+    .home-cell{
+        position: relative;
+    }
+
+    .home-img{
+
+    }
+
+    .home-img::after{
+        /*content: url("https://image.tmdb.org/t/p/original{{tv.results[1].poster_path}}");*/
+        content: "";
+        color :#ffffff;
+        background: rgba(0, 0, 0, 0.67);
+        position: absolute;
+        top: 73%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .home-img:hover{
+        background-color: #000000;
+    }
+
+    .teko-style{
+        font-family: 'Teko', sans-serif;
+    }
+    .nova-slim-style{
+        font-family: 'Nova Slim', cursive;
+    }
+    @import url(https://fonts.googleapis.com/css?family=Nova+Slim);
+    /*@import url(https://fonts.googleapis.com/css?family=Fjalla+One);*/
+    @import url(https://fonts.googleapis.com/css?family=Teko);
+    .film-info{
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+        color: white;
+        z-index: 2;
+    }
+</style>
+
 <div class="container">
     <h1>Body Container</h1>
 
@@ -5,23 +53,93 @@
     <div class="row">
 
         <div class="col-sm-6">
-            <h2>Up comming movies</h2>
-            <ul class="row">
+            <h1 class="teko-style">Popular TV Shows</h1>
+          <div class="row home-cell">
 
-                <li class="col-sm-6" ng-repeat="movie in upComming.results | limitTo: 3">
-                    <movie-cell movie="movie"></movie-cell>
-                </li>
-            </ul>
+              <div class="col-xs-12 reset-padding home-img">
+                  <img width="100%"
+                  ng-src="https://image.tmdb.org/t/p/original{{tv.results[1].backdrop_path}}" alt=""/>
+              </div>
+
+              <div class="col-xs-12 film-info">
+                  <h2 class="teko-style">{{tv.results[1].name}}
+                      <span style="float: right">&#x2605{{tv.results[1].vote_average}}</span>
+                  </h2>
+
+                  <div class="nova-slim-style">First time on the air: {{tv.results[1].first_air_date | date}}</div>
+              </div>
+          </div>
+
+            <div class="row">
+
+                <div class="col-sm-6 reset-padding home-img">
+                    <img width="100%" ng-src="https://image.tmdb.org/t/p/original{{tv.results[2].backdrop_path}}" alt=""/>
+                    <div class="row">
+                        <div class="col-xs-12 film-info">
+                            <h4 class="teko-style">{{tv.results[2].name}}
+                                <span style="float: right">&#x2605{{tv.results[2].vote_average}}</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 reset-padding home-img">
+                    <img width="100%" ng-src="https://image.tmdb.org/t/p/original{{tv.results[3].backdrop_path}}" alt=""/>
+                    <div class="row">
+                        <div class="col-xs-12 film-info">
+                            <h4 class="teko-style">{{tv.results[3].name}}
+                                <span style="float: right">&#x2605{{tv.results[3].vote_average}}</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <div class="col-sm-6">
-            <h2>Now playing movies</h2>
-            <ul class="row">
+            <h1 class="teko-style">Movies In Theatres</h1>
 
-                <li class="col-sm-6" ng-repeat="movie in getPlaying.results | limitTo: 3">
-                    <movie-cell movie="movie"></movie-cell>
-                </li>
-            </ul>
+
+            <div class="row">
+                <div class="col-sm-6 reset-padding home-img">
+                    <img width="100%" ng-src="https://image.tmdb.org/t/p/original{{movie.results[2].backdrop_path}}" alt=""/>
+                    <div class="row">
+                        <div class="col-xs-12 film-info">
+                            <h4 class="teko-style">{{movie.results[2].title}}
+                                <span style="float: right">&#x2605{{movie.results[2].vote_average}}</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 reset-padding home-img">
+                    <img width="100%" ng-src="https://image.tmdb.org/t/p/original{{movie.results[3].backdrop_path}}" alt=""/>
+                    <div class="row">
+                        <div class="col-xs-12 film-info">
+                            <h4 class="teko-style">{{movie.results[3].title}}
+                                <span style="float: right">&#x2605{{movie.results[3].vote_average}}</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row home-cell">
+
+                <div class="col-xs-12 reset-padding home-img">
+                    <img width="100%"
+                         ng-src="https://image.tmdb.org/t/p/original{{movie.results[1].backdrop_path}}" alt=""/>
+                </div>
+
+                <div class="col-xs-12 film-info">
+                    <h2 class="teko-style">{{movie.results[1].title}}
+                        <span style="float: right">&#x2605{{movie.results[1].vote_average}}</span>
+                    </h2>
+
+                    <div class="nova-slim-style">Release Date: {{movie.results[1].release_date | date}}</div>
+                </div>
+            </div>
         </div>
     </div>
 

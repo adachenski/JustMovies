@@ -20,7 +20,7 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             url: 'movies',
             views: {
                 'body-container@': {
-                    templateUrl: 'views/nowPlaying.html',
+                    templateUrl: '../views/movie.html',
                     controller: 'MovieController'
                 }
             }
@@ -39,6 +39,24 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             //        return getMovie.get({eventId:eventId}).$promise;
             //    }
             //}
+        })
+        .state('movieApp.tv',{
+            url:'tv',
+            views:{
+                'body-container@':{
+                    templateUrl:'views/tv.html',
+                    controller:'TvController'
+                }
+            }
+        })
+        .state('movieApp.tvSingle',{
+            url:'tv/:eventId',
+            views:{
+                'body-container@':{
+                    templateUrl:'views/singleTv.html',
+                    controller:'SingleTvController'
+                }
+            }
         });
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);

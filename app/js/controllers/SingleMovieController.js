@@ -3,8 +3,8 @@
  */
 'use strict';
 
-movieApp.controller('SingleMovieController',function($scope,$stateParams, singleMovieService){
+movieApp.controller('SingleMovieController',function($scope,$stateParams, movieService){
 //console.log($stateParams.eventId);
-    $scope.singleMovie = singleMovieService.getMov($stateParams.eventId);
+    $scope.singleMovie = movieService.singleMovie($stateParams.eventId);
     console.log($scope.singleMovie);
 });
