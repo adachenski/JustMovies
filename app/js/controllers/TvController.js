@@ -5,14 +5,14 @@
 
 movieApp.controller('TvController',function($scope, tvService){
     $scope.order = {
-        value:'top_rated'
+        value:'on_the_air'
     };
 
     $scope.reloadTv = function(){
-        $scope.allShows = tvService.getAllShows($scope.order.value);
+        $scope.allShows = tvService.getShow($scope.order.value);
         console.log($scope.allShows );
     };
 
-    $scope.allShows = tvService.getAllShows($scope.order.value);
+    $scope.allShows = tvService.getShow($scope.order.value);
     console.log($scope.allShows );
 });

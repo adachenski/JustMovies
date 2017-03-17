@@ -8,16 +8,18 @@ movieApp.controller('HomeController',HomeController);
 
 function HomeController($scope, movieService,tvService){
     $scope.hello = 'Hello Angular';
+
     $scope.sortOrder = {
-        "type": "select",
-        "name": "Service",
         "value": "now_playing"
     };
     $scope.order = {
-        "type": "select",
-        "name": "Service",
         "value": "popular"
     };
-    $scope.tv = tvService.getAllShows($scope.order.value);
+
+    $scope.firstId =1;
+    $scope.secondId =2;
+    $scope.thirdId =3;
+
+    $scope.tv = tvService.getShow($scope.order.value);
     $scope.movie = movieService.getAllMovies($scope.sortOrder.value);
 }

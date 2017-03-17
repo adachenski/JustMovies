@@ -50,7 +50,7 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             }
         })
         .state('movieApp.tvSingle',{
-            url:'tv/:eventId',
+            url:'tv/:order',
             views:{
                 'body-container@':{
                     templateUrl:'views/singleTv.html',
