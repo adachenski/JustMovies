@@ -1,12 +1,9 @@
 
-<div class="container-fluid" style="background-color: lightgray">
-
-    <div class="container">
+<div class="container">
         <!--ng-options="v for v in sortOrder.values"-->
-
-        <h1>{{sortOrder.value | uppercase}}</h1>
+        <h1 class="teko-style">{{sortOrder.value.replace('_',' ') | uppercase}}</h1>
         <h2>
-            <label for="sort">Show: </label>
+            <label class="teko-style" for="sort">Show: </label>
             <select id="sort" ng-model="sortOrder.value" ng-change="reload()" class="input-sm">
                 <option  value="now_playing">Now Playing</option>
                 <option  value="upcoming">Upcoming </option>
@@ -18,9 +15,7 @@
         <ul class="row">
 
             <li class="col-lg-4 col-sm-6 col-xs-12 card" ng-repeat="movie in getPlaying.results">
-                <movie-cell movie="movie"></movie-cell>
+                <movie-cell class="box-shadow"  movie="movie"></movie-cell>
             </li>
         </ul>
-
-    </div>
 </div>

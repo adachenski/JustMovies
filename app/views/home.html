@@ -1,7 +1,4 @@
 <style>
-    .reset-padding {
-        padding: 0;
-    }
 
     .home-cell {
 
@@ -22,7 +19,6 @@
     }
 
     .home-img::after {
-        /*content: url("https://image.tmdb.org/t/p/original{{tv.results[1].poster_path}}");*/
         content: "";
         color: #ffffff;
         background: rgba(0, 0, 0, 0.67);
@@ -40,17 +36,6 @@
         transform: scale(1.1);
     }
 
-    .teko-style {
-        font-family: 'Teko', sans-serif;
-    }
-
-    .nova-slim-style {
-        font-family: 'Nova Slim', cursive;
-    }
-
-    @import url(https://fonts.googleapis.com/css?family=Nova+Slim);
-    /*@import url(https://fonts.googleapis.com/css?family=Fjalla+One);*/
-    @import url(https://fonts.googleapis.com/css?family=Teko);
     .film-info {
         position: absolute;
         bottom: 5%;
@@ -62,15 +47,22 @@
     .small-img {
         max-width: 250px;
     }
+    .date{
+        margin-top: 15px;
+        padding: 1% 5%;
+
+    }
 </style>
 
 <div class="container">
-    <h1>Body Container</h1>
+    <h2 style="text-align: center" class="teko-style">
+        <span class="date box-shadow">Happy {{week[todayDay]}} {{today | date}}</span>
+    </h2>
 
-    <div>{{hello}}</div>
     <div class="row">
 
         <div class="col-sm-6 col-xs-12">
+
             <h1 class="teko-style">Popular TV Shows</h1>
 
             <div class="row home-cell">
@@ -87,8 +79,7 @@
                         <span style="float: right">&#x2605{{tv.results[firstId].vote_average}}</span>
                     </h2>
 
-                    <div class="nova-slim-style">First time on the air: {{tv.results[firstTvId].first_air_date |
-                        date}}
+                    <div class="nova-slim-style">First time on the air: {{tv.results[firstId].first_air_date | date}}
                     </div>
                 </div>
             </div>
@@ -129,6 +120,7 @@
         </div>
 
         <div class="col-sm-6">
+            <!--<h2 class="teko-style"><span class="date">{{today | date}}</span></h2>-->
             <h1 class="teko-style">Movies In Theatres</h1>
 
 

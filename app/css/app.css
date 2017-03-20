@@ -1,3 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Nova+Slim);
+@import url(https://fonts.googleapis.com/css?family=Teko);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+body{
+    background-color: #F4F4F4;
+    font-family: 'Source Sans Pro','Arial', sans-serif;
+    padding-top: 60px;
+}
+.reset-padding {
+    padding: 0;
+}
+
+.box-shadow{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);"
+}
+
+.teko-style {
+    font-family: 'Teko', sans-serif;
+}
+
+.nova-slim-style {
+    font-family: 'Nova Slim', cursive;
+}
 ul > li {
     display: inline-block;
     list-style: none;
@@ -16,10 +39,10 @@ ul > li {
 }
 
 .card-title{
-
+    font-family: 'Teko', sans-serif;
     padding: 10px;
-    font-size: 1.1em;
-    font-weight: 600;
+    font-size: 1.5em;
+
 }
 .card-title>div:first-child{
     display:inline-block;
@@ -31,8 +54,10 @@ ul > li {
 .card-content{
     padding: 30px 10px 30px 10px;
     font-size: 0.9em;
-    max-height: 130px;
+    line-height: 1.2em;
     overflow-y: hidden;
+    color: #4d4d4d;
+
 }
 .card-content>div:first-child{
 

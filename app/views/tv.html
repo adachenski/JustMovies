@@ -1,25 +1,21 @@
-<div class="container-fluid" style="background-color: lightgray">
+<div class="container">
+    <!--ng-options="v for v in sortOrder.values"-->
 
-    <div class="container">
-        <!--ng-options="v for v in sortOrder.values"-->
-
-        <h1>{{order.value | uppercase}}</h1>
-        <h2>
-            <label for="sort">Show: </label>
-            <select id="sort" ng-model="order.value" ng-change="reloadTv()" class="input-sm">
-                <option  value="on_the_air">On The Air </option>
-                <option  value="top_rated">Top Rated</option>
-                <option  value="popular">Popular </option>
-                <option  value="airing_today">Airing Today</option>
+    <h1> <span class="teko-style">{{order.value.replace('_',' ') | uppercase}}</span>
+        <div style="float: right">
+            <select ng-model="order.value" ng-change="reloadTv()" class="input-lg">
+                <option selected value="on_the_air">Filter</option>
+                <option value="on_the_air">On The Air</option>
+                <option value="top_rated">Top Rated</option>
+                <option value="popular">Popular</option>
+                <option value="airing_today">Airing Today</option>
             </select>
-        </h2>
+        </div>
+    </h1>
 
-        <ul class="row">
-
-            <li class="col-lg-4 col-sm-6 col-xs-12 card" ng-repeat="tv in allShows.results">
-                <tv-cell tv="tv"></tv-cell>
-            </li>
-        </ul>
-
-    </div>
+    <ul class="row">
+        <li class="col-lg-4 col-sm-6 col-xs-12 card" ng-repeat="tv in allShows.results">
+            <tv-cell class="box-shadow" tv="tv"></tv-cell>
+        </li>
+    </ul>
 </div>
