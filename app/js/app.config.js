@@ -8,7 +8,8 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             url: '/',
             views: {
                 'header': {
-                    templateUrl: 'views/header.html'
+                    templateUrl: 'views/header.html',
+                    controller:'HeaderController'
                 },
                 'body-container': {
                     templateUrl: 'views/home.html',
@@ -19,6 +20,9 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
         .state('movieApp.movies', {
             url: 'movies',
             views: {
+                'header@':{
+                    templateUrl:'views/secondHeader.html'
+                },
                 'body-container@': {
                     templateUrl: '../views/movie.html',
                     controller: 'MovieController'
@@ -27,6 +31,9 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
         }).state('movieApp.single',{
             url: 'movies/:eventId',
             views: {
+                'header@':{
+                    templateUrl:'views/secondHeader.html'
+                },
                 'body-container@': {
                     templateUrl: 'views/singleMovie.html',
                     controller: 'SingleMovieController'
@@ -43,6 +50,9 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
         .state('movieApp.tv',{
             url:'tv',
             views:{
+                'header@':{
+                    templateUrl:'views/secondHeader.html'
+                },
                 'body-container@':{
                     templateUrl:'views/tv.html',
                     controller:'TvController'
@@ -52,6 +62,9 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
         .state('movieApp.tvSingle',{
             url:'tv/:order',
             views:{
+                'header@':{
+                    templateUrl:'views/secondHeader.html'
+                },
                 'body-container@':{
                     templateUrl:'views/singleTv.html',
                     controller:'SingleTvController'

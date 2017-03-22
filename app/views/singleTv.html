@@ -1,7 +1,4 @@
 <style>
-    body {
-        padding-top: 0;
-    }
 
     .main-img-container {
         background-image: url("https://image.tmdb.org/t/p/original/{{singleTv.backdrop_path}}");
@@ -169,10 +166,18 @@
         </div>
     </div>
 
+    <!--<div class="row">-->
+        <!--<div class="col-sm-3"></div>-->
+        <!--<div class="col-sm-2 main-font-size" ng-repeat="company in singleTv.production_companies">-->
+            <!--<strong>{{company.name | empty:'Default value'}}</strong>-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="row">
         <div class="col-sm-3"></div>
-        <div class="col-sm-2 main-font-size" ng-repeat="company in singleTv.production_companies">
-            <strong>{{company.name | empty:'Default value'}}</strong>
+        <div class="col-sm-9">
+            <span ng-repeat="company in singleTv.production_companies">
+                <strong>{{company.name}} &nbsp;</strong>
+            </span>
         </div>
     </div>
 
@@ -183,15 +188,14 @@
         </div>
     </div>
 
-    <div class="row">
+    <div style="min-height: 135px" class="row">
         <div class="col-sm-3 col-xs-0"></div>
-        <div class="col-sm-2 col-xs-4 main-font-size" ng-repeat="creator in singleTv.created_by">
+        <div  class="col-sm-2 col-xs-4 main-font-size" ng-repeat="creator in singleTv.created_by">
             <div style="width: 90px; height: 135px" class="box-shadow">
                 <img width="100%" ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{creator.profile_path}}"
                      alt="{{creator.name}}"/>
             </div>
-            <strong>{{creator.name | empty:"Default Value"}}</strong>
-            <strong ng-show="creator.name.length==0">No Creators Name Available!</strong>
+            <strong>{{creator.name}}</strong>
         </div>
     </div>
 
@@ -211,7 +215,7 @@
     padding:0;
     height:280px;
     width: 200px; float: left">
-            <img height="280" width="200" style="background-color: darkgray; " ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.name}}"/>
+            <img height="280" width="185" style="background-color: darkgray; " ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.name}}"/>
             <div><strong>{{tv.name}}</strong></div>
         </div>
     </div>

@@ -4,7 +4,7 @@
 body{
     background-color: #F4F4F4;
     font-family: 'Source Sans Pro','Arial', sans-serif;
-    padding-top: 60px;
+
 }
 .reset-padding {
     padding: 0;
@@ -20,6 +20,7 @@ body{
 
 .nova-slim-style {
     font-family: 'Nova Slim', cursive;
+    font-size: 0.8em;
 }
 ul > li {
     display: inline-block;
@@ -75,4 +76,55 @@ ul > li {
     left:70%;
     width:100px;
     bottom:10px;
+}
+.home-cell {
+
+    position: relative;
+    max-width: 500px;
+}
+
+.home-img {
+    overflow: hidden;
+
+}
+
+.home-img img {
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.home-img::after {
+    content: "";
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.67);
+    position: absolute;
+    top: 73%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.home-img:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.film-info {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    color: white;
+    z-index: 2;
+}
+
+.small-img {
+    max-width: 250px;
+}
+.date{
+    padding: 1% 5%;
+
 }

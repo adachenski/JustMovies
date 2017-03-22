@@ -1,21 +1,23 @@
-
+<p style="padding-bottom: 60px"></p>
 <div class="container">
-        <!--ng-options="v for v in sortOrder.values"-->
-        <h1 class="teko-style">{{sortOrder.value.replace('_',' ') | uppercase}}</h1>
-        <h2>
-            <label class="teko-style" for="sort">Show: </label>
-            <select id="sort" ng-model="sortOrder.value" ng-change="reload()" class="input-sm">
-                <option  value="now_playing">Now Playing</option>
-                <option  value="upcoming">Upcoming </option>
-                <option  value="popular">Popular </option>
-                <option  value="top_rated">Top rated </option>
+    <!--ng-options="v for v in sortOrder.values"-->
+    <h1><span class="teko-style">{{sortOrder.value.replace('_',' ') | uppercase}}</span>
+
+        <div style="float: right">
+            <select ng-model="sortOrder.value" ng-change="reload()" class="input-lg">
+                <option value="now_playing">Now Playing</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="popular">Popular</option>
+                <option value="top_rated">Top rated</option>
             </select>
-        </h2>
+            </h2>
 
-        <ul class="row">
+            <ul class="row">
 
-            <li class="col-lg-4 col-sm-6 col-xs-12 card" ng-repeat="movie in getPlaying.results">
-                <movie-cell class="box-shadow"  movie="movie"></movie-cell>
-            </li>
-        </ul>
+                <li class="col-lg-4 col-sm-6 col-xs-12 card" ng-repeat="movie in getPlaying.results">
+                    <movie-cell class="box-shadow" movie="movie"></movie-cell>
+                </li>
+            </ul>
+        </div>
+    </h1>
 </div>
