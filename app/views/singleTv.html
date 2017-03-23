@@ -1,5 +1,4 @@
 <style>
-
     .main-img-container {
         background-image: url("https://image.tmdb.org/t/p/original/{{singleTv.backdrop_path}}");
         background-attachment: fixed;
@@ -9,73 +8,6 @@
         height: 500px;
         position: relative;
 
-    }
-
-    .transparent-separator {
-        width: 100%;
-        height: 50px;
-        opacity: 0.7;
-        background-color: #000000;
-        position: relative;
-        top: -50px;
-        color: #ffffff;
-
-    }
-
-    .transparent-separator > div {
-
-    }
-
-    .transparent-separator > div > div {
-        display: inline-block;
-        font-size: 1.2em;
-        padding: 9px;
-    }
-
-    .separator {
-        width: 100%;
-        height: 50px;
-        background-color: lightgray;
-        position: relative;
-        top: -50px;
-        /*display:table;*/
-        /*vertical-align:middle;*/
-
-    }
-
-    .separator > div > div {
-        display: inline-block;
-        font-size: 1.2em;
-        padding: 9px;
-    }
-
-    @media only screen and (max-width: 500px) {
-
-    }
-
-    .poster-container {
-
-        max-width: 183px;
-        max-height: 275px;
-        position: absolute;
-        top: 300px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-    }
-
-    .title {
-        position: absolute;
-        top: 350px;
-        width: 100%;
-        color: #ffffff;
-
-    }
-
-    .main-font-size {
-        font-size: 1.1em;
-    }
-
-    .title div h1 {
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0px 5px 10px rgba(0, 0, 0, 0.8);
     }
 
 </style>
@@ -167,10 +99,10 @@
     </div>
 
     <!--<div class="row">-->
-        <!--<div class="col-sm-3"></div>-->
-        <!--<div class="col-sm-2 main-font-size" ng-repeat="company in singleTv.production_companies">-->
-            <!--<strong>{{company.name | empty:'Default value'}}</strong>-->
-        <!--</div>-->
+    <!--<div class="col-sm-3"></div>-->
+    <!--<div class="col-sm-2 main-font-size" ng-repeat="company in singleTv.production_companies">-->
+    <!--<strong>{{company.name | empty:'Default value'}}</strong>-->
+    <!--</div>-->
     <!--</div>-->
     <div class="row">
         <div class="col-sm-3"></div>
@@ -190,7 +122,7 @@
 
     <div style="min-height: 135px" class="row">
         <div class="col-sm-3 col-xs-0"></div>
-        <div  class="col-sm-2 col-xs-4 main-font-size" ng-repeat="creator in singleTv.created_by">
+        <div class="col-sm-2 col-xs-4 main-font-size" ng-repeat="creator in singleTv.created_by">
             <div style="width: 90px; height: 135px" class="box-shadow">
                 <img width="100%" ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{creator.profile_path}}"
                      alt="{{creator.name}}"/>
@@ -200,31 +132,22 @@
     </div>
 
 
-<h1>Similar movies</h1>
-<div style=" overflow-x:scroll;
-    overflow-y:hidden;
-    height:320px;
-    padding: 0 15px;
-    white-space: nowrap;
-    position: relative;">
+    <h1 class="teko-style">Similar Shows</h1>
 
+    <div class="inline-show-list">
 
-    <div style="width: 4000px;" ng-repeat="tv in similar.results">
+        <div ng-repeat="tv in similar.results">
 
-        <div style="
-    padding:0;
-    height:280px;
-    width: 200px; float: left">
-            <img height="280" width="185" style="background-color: darkgray; " ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.name}}"/>
-            <div><strong>{{tv.name}}</strong></div>
+            <div>
+                <a ui-sref="movieApp.tvSingle({order:tv.id})">
+                    <img height="280" width="185" style="background-color: darkgray; "
+                         ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.name}}"/>
+                </a>
+
+                <div><strong>{{tv.name}}</strong></div>
+            </div>
         </div>
-    </div>
 
-</div>
-    <div class="row">
-        <div class="col-xs-12" style="font-size: 39px">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa earum eos est mollitia natus, nemo neque porro sint ut vel? A animi maxime perspiciatis quisquam? Ab accusantium amet assumenda dolores doloribus ea enim eos, error illum, inventore ipsum iste magnam nostrum odit quam repellat similique vitae voluptatem. Itaque libero non pariatur similique! Doloremque ducimus earum id, ipsa perferendis praesentium recusandae! Accusamus alias, blanditiis nemo quidem quis repellendus unde voluptatum? Accusamus aliquid aut, cupiditate debitis deserunt distinctio ea eius enim est et illo illum impedit laboriosam magni mollitia nihil nisi nulla numquam porro quaerat quo suscipit tenetur ullam velit vero. Blanditiis cumque dignissimos dolore doloremque dolores esse et impedit, inventore ipsum itaque, necessitatibus nisi obcaecati perspiciatis rerum sed, ullam vero! Consequatur delectus ea eius esse exercitationem fugit iste molestiae natus nemo nihil numquam quos, sed sint, suscipit totam voluptate voluptates. Aliquid dolor eius error molestias nobis qui quisquam, sed suscipit tempore tenetur? Facere fugiat nesciunt ratione soluta suscipit voluptate voluptatum? Ad assumenda delectus distinctio earum est neque reprehenderit tempora! Amet beatae blanditiis consequuntur culpa dolores earum et exercitationem fuga in ipsa maxime modi molestiae nesciunt non nulla, quasi quibusdam quisquam sapiente sit temporibus tenetur voluptas voluptatibus. Accusantium cupiditate non obcaecati quas!
-        </div>
     </div>
 </div>
 

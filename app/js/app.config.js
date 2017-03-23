@@ -14,6 +14,9 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
                 'body-container': {
                     templateUrl: 'views/home.html',
                     controller: 'HomeController'
+                },
+                'footer':{
+                    templateUrl:'views/footer.html'
                 }
             }
         })
