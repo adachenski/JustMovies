@@ -149,6 +149,26 @@
         </div>
 
     </div>
+
+    <h1 class="teko-style">Recommended </h1>
+
+    <div class="inline-show-list">
+
+        <div ng-repeat="tv in recommendations.results">
+
+            <div>
+                <a ui-sref="movieApp.tvSingle({order:tv.id})">
+                    <img height="280" width="185" style="background-color: darkgray; "
+                         ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.name}}"/>
+                </a>
+
+                <div><strong>{{tv.name}}</strong></div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr/>
 </div>
 
 

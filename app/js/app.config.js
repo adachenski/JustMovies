@@ -9,33 +9,33 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             views: {
                 'header': {
                     templateUrl: 'views/header.html',
-                    controller:'HeaderController'
+                    controller: 'HeaderController'
                 },
                 'body-container': {
                     templateUrl: 'views/home.html',
                     controller: 'HomeController'
                 },
-                'footer':{
-                    templateUrl:'views/footer.html'
+                'footer': {
+                    templateUrl: 'views/footer.html'
                 }
             }
         })
         .state('movieApp.movies', {
             url: 'movies',
             views: {
-                'header@':{
-                    templateUrl:'views/secondHeader.html'
+                'header@': {
+                    templateUrl: 'views/secondHeader.html'
                 },
                 'body-container@': {
                     templateUrl: '../views/movie.html',
                     controller: 'MovieController'
                 }
             }
-        }).state('movieApp.single',{
+        }).state('movieApp.single', {
             url: 'movies/:eventId',
             views: {
-                'header@':{
-                    templateUrl:'views/secondHeader.html'
+                'header@': {
+                    templateUrl: 'views/secondHeader.html'
                 },
                 'body-container@': {
                     templateUrl: 'views/singleMovie.html',
@@ -50,27 +50,39 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             //    }
             //}
         })
-        .state('movieApp.tv',{
-            url:'tv',
-            views:{
-                'header@':{
-                    templateUrl:'views/secondHeader.html'
+        .state('movieApp.tv', {
+            url: 'tv/:order/:page',
+            params: {
+                //'order.value': {
+                //    value: 'on_the_air'
+                //},
+                page: {
+                    value: '1'
+                }
+            },
+            views: {
+                'header@': {
+                    templateUrl: 'views/secondHeader.html'
                 },
-                'body-container@':{
-                    templateUrl:'views/tv.html',
-                    controller:'TvController'
+                'body-container@': {
+                    templateUrl: 'views/tv.html',
+                    controller: 'TvController'
                 }
             }
         })
-        .state('movieApp.tvSingle',{
-            url:'tv/:order',
-            views:{
-                'header@':{
-                    templateUrl:'views/secondHeader.html'
+        .state('movieApp.tvSingle', {
+            url: 'tv/:order',
+            //params: {
+            //    order: '@order'
+            //
+            //},
+            views: {
+                'header@': {
+                    templateUrl: 'views/secondHeader.html'
                 },
-                'body-container@':{
-                    templateUrl:'views/singleTv.html',
-                    controller:'SingleTvController'
+                'body-container@': {
+                    templateUrl: 'views/singleTv.html',
+                    controller: 'SingleTvController'
                 }
             }
         });
