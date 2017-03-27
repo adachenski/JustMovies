@@ -24,4 +24,5 @@ function HomeController($scope, movieService, tvService) {
     $scope.tv = tvService.getShow($scope.order.value);
     $scope.movie = movieService.getAllMovies($scope.sortOrder.value);
     $scope.popular = movieService.getAllMovies($scope.order.value);
+    console.log($scope.popular);
 }

@@ -3,32 +3,29 @@
  */
 'use strict';
 
-movieApp.controller('TvController',function($scope,$stateParams,$state, tvService){
+movieApp.controller('TvController', function ($scope, $stateParams, $state, tvService) {
 
     $scope.order = {
         "type": "select",
         "name": "Service",
-        "value":'on_the_air'
+        "value": 'on_the_air'
     };
-    $scope.allShows = tvService.getShows($scope.order.value,$stateParams.page);
+    $scope.allShows = tvService.getShows($scope.order.value, $stateParams.page);
     $scope.singlePage = $stateParams.page;
     //var page = 1;
-    $scope.reloadTv = function(){
-        $scope.singlePage =1;
-        $state.go('movieApp.tv',{order:$scope.order.value,page:$scope.singlePage},{notify: false});
-        $scope.allShows = tvService.getShows($scope.order.value,$scope.singlePage );
-        console.log($scope.allShows );
+    $scope.reloadTv = function () {
+        $scope.singlePage = 1;
+        $state.go('movieApp.tv', {order: $scope.order.value, page: $scope.singlePage}, {notify: false});
+        $scope.allShows = tvService.getShows($scope.order.value, $scope.singlePage);
+        console.log($scope.allShows);
     };
 
-    $scope.next = function (){
+    $scope.next = function () {
         $scope.singlePage++;
-       // $scope.allShows = tvService.getShows($scope.order.value);
-       // $state.go('movieApp.tv',{order:value});
-        $state.go('movieApp.tv',{order:$scope.order.value,page:$scope.singlePage },{notify: false});
-        $scope.allShows = tvService.getShows($scope.order.value,$scope.singlePage );
-        console.log($state.href('movieApp.tv',$state.params, {absolute: true}) );
-
+        $state.go('movieApp.tv', {order: $scope.order.value, page: $scope.singlePage}, {notify: false});
+        $scope.allShows = tvService.getShows($scope.order.value, $scope.singlePage);
+        console.log($state.href('movieApp.tv', $state.params, {absolute: true}));
     };
 
-    console.log($scope.allShows );
+    console.log($scope.allShows);
 });

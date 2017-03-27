@@ -1,7 +1,9 @@
 <p style="padding-bottom: 60px"></p>
+
 <div class="container">
     <!--ng-options="v for v in sortOrder.values"-->
-    <h1><span class="teko-style">{{sortOrder.value.replace('_',' ') | uppercase}}</span>
+    <h1>
+        <span class="teko-style">{{sortOrder.value.replace('_',' ') | uppercase}}</span>
 
         <div style="float: right">
             <select ng-model="sortOrder.value" ng-change="reload()" class="input-lg">
@@ -10,14 +12,37 @@
                 <option value="popular">Popular</option>
                 <option value="top_rated">Top rated</option>
             </select>
-            </h2>
-
-            <ul class="row">
-
-                <li class="col-lg-4 col-sm-6 col-xs-12 card" ng-repeat="movie in getPlaying.results">
-                    <movie-cell class="box-shadow" movie="movie"></movie-cell>
-                </li>
-            </ul>
         </div>
     </h1>
+    <ul class="row">
+
+        <li class="col-lg-4 col-sm-6 col-xs-12 card" ng-repeat="movie in getPlaying.results">
+            <movie-cell class="box-shadow" movie="movie"></movie-cell>
+        </li>
+    </ul>
+
+
+    <hr/>
+    <div class="row">
+        <div class="col-xs-12 hidden-sm hidden-md hidden-lg" style="text-align: center">
+            <h5><strong>Page {{singlePage}} of {{getPlaying.total_pages}}</strong></h5>
+        </div>
+        <div class="col-xs-1 hidden-sm hidden-md hidden-lg">
+        </div>
+        <div class="col-xs-5" style="text-align: right">
+            <button class="btn btn-default" ng-click="prev()">
+                <i class="fa fa-chevron-circle-left fa-lg" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="col-xs-2 hidden-xs" style="text-align: center">
+            <h5><strong>Page {{singlePage}} of {{getPlaying.total_pages}}</strong></h5>
+        </div>
+        <div class="col-xs-5">
+            <button class="btn btn-default" ng-click="next()">
+                <i class="fa fa-chevron-circle-right fa-lg" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <hr/>
+</div>
 </div>

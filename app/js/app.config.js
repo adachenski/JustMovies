@@ -21,7 +21,12 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             }
         })
         .state('movieApp.movies', {
-            url: 'movies',
+            url: 'movies/:sortOrder/:page',
+            params:{
+                page:{
+                    value:'1'
+                }
+            },
             views: {
                 'header@': {
                     templateUrl: 'views/secondHeader.html'
@@ -53,9 +58,6 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
         .state('movieApp.tv', {
             url: 'tv/:order/:page',
             params: {
-                //'order.value': {
-                //    value: 'on_the_air'
-                //},
                 page: {
                     value: '1'
                 }

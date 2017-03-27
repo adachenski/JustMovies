@@ -61,7 +61,6 @@
         </div>
 
         <div class="col-sm-6">
-            <!--<h2 class="teko-style"><span class="date">{{today | date}}</span></h2>-->
             <h1 class="teko-style">Movies In Theatres</h1>
 
 
@@ -118,11 +117,14 @@
     </div>
 
     <h1 class="teko-style">Popular movies</h1>
+    <style>
 
-    <div class="inline-show-list">
+    </style>
 
-        <div ng-repeat="tv in popular.results">
-            <div>
+    <div class="inline-show-list style-3">
+
+        <div ng-repeat="tv in popular.results" >
+            <div >
                 <img height="280" width="185" style="background-color: darkgray; " ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.name}}"/>
                 <div><strong>{{tv.title}}</strong></div>
             </div>
