@@ -70,6 +70,10 @@ ul > li {
     -webkit-line-clamp: 4; /* number of lines to show */
     -webkit-box-orient: vertical;
 }
+.long-text{
+    max-width: 80%;
+    overflow-x: hidden;
+}
 .btn-bot{
     position:absolute;
     margin-left:-50px;
@@ -237,4 +241,29 @@ ul > li {
 .style-3::-webkit-scrollbar-thumb
 {
     background-color: #000000;
+}
+.affix {
+    top: 0;
+    width: 100%;
+}
+
+.affix + .container-fluid {
+    padding-top: 70px;
+}
+svg{
+    width: 200px;
+    height: 120px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+
+}
+.header-gradient{
+    background: linear-gradient(to bottom,#000000,#222222);
+    background: -moz-linear-gradient(top,#000000,#222222);
+    background: -o-linear-gradient(top,#000000,#222222);
+    background:-ms-linear-gradient(top,#000000,#222222);
+    background: -webkit-linear-gradient(#000000, #222222);
+    color:#fff;height:150px;
 }

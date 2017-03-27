@@ -1,5 +1,4 @@
 <div class="container">
-
     <div class="row">
 
         <div class="col-sm-6 col-xs-12">
@@ -60,7 +59,7 @@
             </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-xs-12">
             <h1 class="teko-style">Movies In Theatres</h1>
 
 
@@ -117,16 +116,18 @@
     </div>
 
     <h1 class="teko-style">Popular movies</h1>
-    <style>
-
-    </style>
 
     <div class="inline-show-list style-3">
 
         <div ng-repeat="tv in popular.results" >
-            <div >
-                <img height="280" width="185" style="background-color: darkgray; " ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.name}}"/>
-                <div><strong>{{tv.title}}</strong></div>
+            <div>
+                <a ui-sref="movieApp.single({eventId:tv.id})">
+                <img title="{{tv.name}}" height="280" width="185"
+                     style="background-color: darkgray;"
+                     ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
+                     alt="{{tv.name}}"/>
+                </a>
+                <div class="long-text"><strong>{{tv.title}}</strong></div>
             </div>
         </div>
 

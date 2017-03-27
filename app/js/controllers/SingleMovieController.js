@@ -8,5 +8,4 @@ movieApp.controller('SingleMovieController',function($scope,$stateParams, movieS
     $scope.singleMovie = movieService.singleMovie($stateParams.eventId);
     $scope.similar = movieService.similarMovies($stateParams.eventId);
     $scope.recommendations = movieService.recommended($stateParams.eventId);
-    console.log($scope.singleMovie);
 });

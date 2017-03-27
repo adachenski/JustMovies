@@ -33,6 +33,4 @@ movieApp.controller('MovieController', function ($scope, $state, $stateParams, m
         $scope.getPlaying = movieService.getAllMovies($scope.sortOrder.value, $scope.singlePage);
     };
 
-
-    console.log($scope.getPlaying);
 });

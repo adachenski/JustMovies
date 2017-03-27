@@ -17,15 +17,12 @@ movieApp.controller('TvController', function ($scope, $stateParams, $state, tvSe
         $scope.singlePage = 1;
         $state.go('movieApp.tv', {order: $scope.order.value, page: $scope.singlePage}, {notify: false});
         $scope.allShows = tvService.getShows($scope.order.value, $scope.singlePage);
-        console.log($scope.allShows);
     };
 
     $scope.next = function () {
         $scope.singlePage++;
         $state.go('movieApp.tv', {order: $scope.order.value, page: $scope.singlePage}, {notify: false});
         $scope.allShows = tvService.getShows($scope.order.value, $scope.singlePage);
-        console.log($state.href('movieApp.tv', $state.params, {absolute: true}));
     };
 
-    console.log($scope.allShows);
 });
