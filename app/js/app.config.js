@@ -74,10 +74,6 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
         })
         .state('movieApp.tvSingle', {
             url: 'tv/:order',
-            //params: {
-            //    order: '@order'
-            //
-            //},
             views: {
                 'header@': {
                     templateUrl: 'views/secondHeader.html'

@@ -1,17 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Nova+Slim);
 @import url(https://fonts.googleapis.com/css?family=Teko);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-body{
+
+body {
     background-color: #F4F4F4;
-    font-family: 'Source Sans Pro','Arial', sans-serif;
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
 
 }
+
 .reset-padding {
     padding: 0;
 }
 
-.box-shadow{
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);"
+.box-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+"
 }
 
 .teko-style {
@@ -22,6 +25,7 @@ body{
     font-family: 'Nova Slim', cursive;
     font-size: 0.8em;
 }
+
 ul > li {
     display: inline-block;
     list-style: none;
@@ -35,24 +39,27 @@ ul > li {
     background-color: #ffffff;
 
 }
-.card-img{
+
+.card-img {
     padding: 0;
 }
 
-.card-title{
+.card-title {
     font-family: 'Teko', sans-serif;
     padding: 10px;
     font-size: 1.5em;
 
 }
-.card-title>div:first-child{
-    display:inline-block;
-    width:130px;
+
+.card-title > div:first-child {
+    display: inline-block;
+    width: 130px;
     white-space: nowrap;
-    overflow:hidden !important;
+    overflow: hidden !important;
     text-overflow: ellipsis;
 }
-.card-content{
+
+.card-content {
     padding: 20px 10px 40px 10px;
     font-size: 0.9em;
     line-height: 1.2em;
@@ -60,27 +67,31 @@ ul > li {
     color: #4d4d4d;
 
 }
-.card-content>div:first-child{
+
+.card-content > div:first-child {
 
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    line-height: 16px;     /* fallback */
-    max-height: 64px;      /* fallback */
+    line-height: 16px; /* fallback */
+    max-height: 64px; /* fallback */
     -webkit-line-clamp: 4; /* number of lines to show */
     -webkit-box-orient: vertical;
 }
-.long-text{
+
+.long-text {
     max-width: 80%;
     overflow-x: hidden;
 }
-.btn-bot{
-    position:absolute;
-    margin-left:-50px;
-    left:70%;
-    width:100px;
-    bottom:10px;
+
+.btn-bot {
+    position: absolute;
+    margin-left: -50px;
+    left: 70%;
+    width: 100px;
+    bottom: 10px;
 }
+
 .home-cell {
 
     position: relative;
@@ -128,7 +139,8 @@ ul > li {
 .small-img {
     max-width: 250px;
 }
-.date{
+
+.date {
     padding: 1% 5%;
 
 }
@@ -213,11 +225,14 @@ ul > li {
 .inline-show-list > div {
     width: 4000px;
 }
-.inline-show-list > div > div{
-    padding:0;
-    height:280px;
-    width: 200px; float: left
+
+.inline-show-list > div > div {
+    padding: 0;
+    height: 280px;
+    width: 200px;
+    float: left
 }
+
 .main-img-container {
     background-attachment: fixed;
     background-position: center;
@@ -227,21 +242,21 @@ ul > li {
     position: relative;
 
 }
-.style-3::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+
+.style-3::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #F5F5F5;
 }
-.style-3::-webkit-scrollbar
-{
+
+.style-3::-webkit-scrollbar {
     height: 5px;
     background-color: #F5F5F5;
 }
 
-.style-3::-webkit-scrollbar-thumb
-{
+.style-3::-webkit-scrollbar-thumb {
     background-color: #000000;
 }
+
 .affix {
     top: 0;
     width: 100%;
@@ -250,7 +265,8 @@ ul > li {
 .affix + .container-fluid {
     padding-top: 70px;
 }
-svg{
+
+svg {
     width: 200px;
     height: 120px;
     display: block;
@@ -259,11 +275,61 @@ svg{
     margin: 0 auto;
 
 }
-.header-gradient{
-    background: linear-gradient(to bottom,#000000,#222222);
-    background: -moz-linear-gradient(top,#000000,#222222);
-    background: -o-linear-gradient(top,#000000,#222222);
-    background:-ms-linear-gradient(top,#000000,#222222);
+
+.header-gradient {
+    background: linear-gradient(to bottom, #000000, #222222);
+    background: -moz-linear-gradient(top, #000000, #222222);
+    background: -o-linear-gradient(top, #000000, #222222);
+    background: -ms-linear-gradient(top, #000000, #222222);
     background: -webkit-linear-gradient(#000000, #222222);
-    color:#fff;height:150px;
+    color: #fff;
+    height: 150px;
+}
+
+.no-poster {
+    height: 280px;
+    width: 185px;
+    background-color: lightgray;
+}
+
+ .movies {
+     height: 220px;
+ }
+
+.movies div {
+    height: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.movies div > button {
+    margin-top: 100%;
+    border: 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    font-size: 1.6em;
+
+}
+
+@media (min-width: 700px) {
+    .movies {
+        height: 420px;
+    }
+
+    .movies > div {
+
+        /*display: table;*/
+        /*height: 420px;*/
+        /*overflow: hidden;*/
+    }
+
+    .movies div > button {
+        margin-top: 90%;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        font-size: 2.6em;
+    }
 }

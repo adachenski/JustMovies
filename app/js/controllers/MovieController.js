@@ -11,8 +11,9 @@ movieApp.controller('MovieController', function ($scope, $state, $stateParams, m
         "name": "Service",
         "value": "now_playing"
     };
-    $scope.getPlaying = movieService.getAllMovies($scope.sortOrder.value);
     $scope.singlePage = $stateParams.page;
+
+    $scope.getPlaying =  movieService.getAllMovies($scope.sortOrder.value);
 
     $scope.reload = function () {
         $scope.singlePage =1;
@@ -28,9 +29,13 @@ movieApp.controller('MovieController', function ($scope, $state, $stateParams, m
         console.log($state.href('movieApp.movies', $state.params, {absolute: true}));
     };
     $scope.prev = function () {
-        $scope.singlePage--;
-        $state.go('movieApp.movies', {sortOrder: $scope.sortOrder.value, page: $scope.singlePage}, {notify: false});
-        $scope.getPlaying = movieService.getAllMovies($scope.sortOrder.value, $scope.singlePage);
+        if($scope.singlePage === 1){
+            $scope.singlePage=1;
+        }else{
+            $scope.singlePage--;
+            $state.go('movieApp.movies', {sortOrder: $scope.sortOrder.value, page: $scope.singlePage}, {notify: false});
+            $scope.getPlaying = movieService.getAllMovies($scope.sortOrder.value, $scope.singlePage);
+        }
     };
 
 });

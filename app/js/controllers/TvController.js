@@ -12,7 +12,7 @@ movieApp.controller('TvController', function ($scope, $stateParams, $state, tvSe
     };
     $scope.allShows = tvService.getShows($scope.order.value, $stateParams.page);
     $scope.singlePage = $stateParams.page;
-    //var page = 1;
+
     $scope.reloadTv = function () {
         $scope.singlePage = 1;
         $state.go('movieApp.tv', {order: $scope.order.value, page: $scope.singlePage}, {notify: false});
@@ -23,6 +23,17 @@ movieApp.controller('TvController', function ($scope, $stateParams, $state, tvSe
         $scope.singlePage++;
         $state.go('movieApp.tv', {order: $scope.order.value, page: $scope.singlePage}, {notify: false});
         $scope.allShows = tvService.getShows($scope.order.value, $scope.singlePage);
+    };
+
+    $scope.prev = function () {
+        if($scope.singlePage === 1){
+            $scope.singlePage=1;
+        }
+        else{
+            $scope.singlePage--;
+            $state.go('movieApp.tv', {order: $scope.order.value, page: $scope.singlePage}, {notify: false});
+            $scope.allShows = tvService.getShows($scope.order.value, $scope.singlePage);
+        }
     };
 
 });

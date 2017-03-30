@@ -1,5 +1,5 @@
 <div parallax-background parallax-ratio="0.5"
-     style="background-image: url('https://image.tmdb.org/t/p/original/{{singleMovie.backdrop_path}}')"
+     style="background-image: url('https://image.tmdb.org/t/p/original{{singleMovie.backdrop_path}}')"
      class="main-img-container">
 </div>
 
@@ -114,9 +114,30 @@
     </div>
 
 
-    <h1 class="teko-style">Similar Movies</h1>
 
-    <div class="inline-show-list style-3">
+    <h1 ng-hide="!urls.length" class="teko-style"> Videos</h1>
+
+    <div class="row movies" ng-hide="!urls.length">
+
+        <div class="col-xs-3 col-sm-2">
+            <button class="btn btn-default box-shadow" onclick="plusDivs(-1)">&#10094;</button>
+        </div>
+
+        <div class="col-xs-6 col-sm-8">
+            <iframe class="mySlides" ng-repeat="video in urls"
+                    width="100%" style="height: inherit; border: 0"
+                    ng-src="{{video}}" frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="col-xs-3 col-sm-2">
+            <button class="btn btn-default  box-shadow" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <h1 ng-show="similar.results.length" class="teko-style">Similar Movies</h1>
+
+    <div ng-show="similar.results.length" class="inline-show-list style-3">
 
         <div ng-repeat="tv in similar.results">
 
@@ -132,9 +153,9 @@
 
     </div>
 
-    <h1 class="teko-style">Recommended </h1>
+    <h1 ng-show="recommendations.results.length" class="teko-style">Recommended </h1>
 
-    <div class="inline-show-list style-3">
+    <div ng-show="recommendations.results.length" class="inline-show-list style-3">
 
         <div ng-repeat="tv in recommendations.results">
 
@@ -153,5 +174,5 @@
     <hr/>
 </div>
 
-
+<script src="js/movieApp.js"></script>
 <!--<div parallax-background parallax-ratio="0.5" class="main-img-container"></div>-->

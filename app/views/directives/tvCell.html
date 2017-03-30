@@ -1,7 +1,10 @@
 <div title="{{tv.original_name}}" class="row" style="position: relative;">
 
-    <div class="col-xs-5 card-img">
+    <div ng-show="tv.poster_path" class="col-xs-5 card-img">
         <img width="100%" ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.original_name}}"/>
+    </div>
+    <div ng-hide="tv.poster_path" class="col-xs-5 card-img">
+        <img  width="100%" ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/jf4L6BTx5GaxKEGkq7UVAag1N1V.jpg" alt=""/>
     </div>
 
     <div class="col-xs-7">
