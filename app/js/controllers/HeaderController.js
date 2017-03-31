@@ -7,7 +7,7 @@ movieApp.controller('HeaderController',HeadController);
 function HeadController($scope){
     var today =  new Date;
     $scope.today = today;
-
+    console.log('%cStop! \nThis feature is for developers only...', 'background: #222; color: #bada55; font-size: 2.4em');
     $scope.todayDay = today.getDay();
 
     $scope.week = {

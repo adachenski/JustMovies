@@ -20,23 +20,7 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
                 }
             }
         })
-        .state('movieApp.movies', {
-            url: 'movies/:sortOrder/:page',
-            params:{
-                page:{
-                    value:'1'
-                }
-            },
-            views: {
-                'header@': {
-                    templateUrl: 'views/secondHeader.html'
-                },
-                'body-container@': {
-                    templateUrl: '../views/movie.html',
-                    controller: 'MovieController'
-                }
-            }
-        }).state('movieApp.single', {
+        .state('movieApp.single', {
             url: 'movies/:eventId',
             views: {
                 'header@': {
@@ -54,6 +38,26 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             //        return getMovie.get({eventId:eventId}).$promise;
             //    }
             //}
+        })
+        .state('movieApp.movies', {
+            url: 'movies/:sortOrder/:page',
+            params:{
+                //sortOrder:{
+                //    value:'now_playing'
+                //},
+                page:{
+                    value:'1'
+                }
+            },
+            views: {
+                'header@': {
+                    templateUrl: 'views/secondHeader.html'
+                },
+                'body-container@': {
+                    templateUrl: '../views/movie.html',
+                    controller: 'MovieController'
+                }
+            }
         })
         .state('movieApp.tv', {
             url: 'tv/:order/:page',

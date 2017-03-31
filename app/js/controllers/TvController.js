@@ -10,6 +10,7 @@ movieApp.controller('TvController', function ($scope, $stateParams, $state, tvSe
         "name": "Service",
         "value": 'on_the_air'
     };
+
     $scope.allShows = tvService.getShows($scope.order.value, $stateParams.page);
     $scope.singlePage = $stateParams.page;
 
