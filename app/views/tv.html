@@ -1,18 +1,34 @@
 <p style="padding-bottom: 60px"></p>
 <div class="container">
-    <!--ng-options="v for v in sortOrder.values"-->
-    <h1>
-        <span class="teko-style">{{order.value.replace('_',' ') | uppercase}}</span>
 
-        <div style="float: right">
-            <select ng-model="order.value" ng-change="reloadTv()" class="input-lg">
-                <option value="on_the_air">Filter</option>
+    <!--ng-options="v for v in sortOrder.values"-->
+    <h1 class="row">
+        <div class="hidden-md hidden-lg teko-style col-xs-6">
+            <strong>{{singleName.replace('_',' ') | uppercase}}</strong>
+        </div>
+
+        <div class="hidden-md hidden-lg col-xs-6" >
+            <select style="float: right"  ng-model="order.value" ng-change="reloadTv()" class="input-lg">
+                <option value="#">Filter</option>
+                <option value="airing_today">Airing Today</option>
                 <option value="on_the_air">On The Air</option>
                 <option value="top_rated">Top Rated</option>
                 <option value="popular">Popular</option>
-                <option value="airing_today">Airing Today</option>
             </select>
         </div>
+
+        <div class="hidden-xs hidden-sm col-md-6">
+            <a class="btn btn-default" ui-sref="movieApp.tv({order:'airing_today',page:'1'})">Airing Today</a>
+            <a class="btn btn-default" ui-sref="movieApp.tv({order:'on_the_air',page:'1'})">On The Air</a>
+            <a class="btn btn-default" ui-sref="movieApp.tv({order:'popular',page:'1'})">Popular</a>
+            <a class="btn btn-default" ui-sref="movieApp.tv({order:'top_rated',page:'1'})">Top Rated</a>
+
+        </div>
+        <div class="col-md-6 teko-style hidden-xs hidden-sm">
+            <strong style="float: right"  >{{singleName.replace('_',' ') | uppercase}}</strong>
+        </div>
+
+
     </h1>
 
     <ul class="row">

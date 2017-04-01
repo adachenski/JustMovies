@@ -333,3 +333,6 @@ svg {
         font-size: 2.6em;
     }
 }
+select{
+    border-radius: 0 !important;
+}

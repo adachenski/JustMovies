@@ -1,25 +1,32 @@
 <p style="padding-bottom: 60px"></p>
 
 <div class="container">
-    <!--ng-options="v for v in sortOrder.values"-->
-    <h1>
-        <span class="teko-style">{{sortOrder.value.replace('_',' ') | uppercase}}</span>
 
-        <div style="float: right">
-            <select ng-model="sortOrder.value"   ng-change="reload()" class="input-lg">
-                <option ng-repeat="name in names" value="{{name.value}}">{{name.display}}</option>
-                <!--<option value="#"></option>-->
-                <!--<option value="now_playing">Now Playing</option>-->
-                <!--<option value="upcoming">Upcoming</option>-->
-                <!--<option value="popular">Popular</option>-->
-                <!--<option value="top_rated">Top rated</option>-->
+    <!--<button class="btn btn-default" ng-click="reload('top_rated'); name('Top Rated')">Top Rated</button>-->
+    <!--<button class="btn btn-default" ng-click="reload('upcoming')">Upcoming</button>-->
+    <!--<button class="btn btn-default" ng-click="reload('popular')">Popular</button>-->
+    <!--<button class="btn btn-default" ng-click="reload('now_playing')">Now Playing</button>-->
+    <h1 class="row" >
+        <div class="col-xs-6 hidden-md hidden-lg">
+            <strong>{{singleName.replace('_',' ') | uppercase}}</strong>
+        </div>
+        <div class="col-xs-6 hidden-md hidden-lg">
+            <select class="input-lg" style="float: right" ng-model="names.value" ng-change="reload(names.value)" name="" id="">
+                <option ng-repeat="name in names"  value="{{name.value}}">{{name.display}}</option>
             </select>
         </div>
+
+        <div class="col-md-8 hidden-xs hidden-sm">
+            <a class="btn btn-default" ui-sref="movieApp.movies({sortOrder:'now_playing',page:'1'})">Now Playing</a>
+            <a class="btn btn-default" ui-sref="movieApp.movies({sortOrder:'upcoming',page:'1'})">Upcoming</a>
+            <a class="btn btn-default" ui-sref="movieApp.movies({sortOrder:'popular',page:'1'})">Popular</a>
+            <a class="btn btn-default" ui-sref="movieApp.movies({sortOrder:'top_rated',page:'1'})">Top Rated</a>
+        </div>
+        <div class="col-md-4 hidden-xs hidden-sm">
+            <strong style="float: right">{{singleName.replace('_',' ') | uppercase}}</strong>
+        </div>
     </h1>
-    <button class="btn btn-default" ng-model="sortOrder.value" ng-click="reload('top_rated')">Top Rated</button>
-    <button class="btn btn-default" ng-model="sortOrder.value" ng-click="reload('upcoming')">Upcoming</button>
-    <button class="btn btn-default" ng-model="sortOrder.value" ng-click="reload('popular')">Popular</button>
-    <button class="btn btn-default" ng-model="sortOrder.value" ng-click="reload('now_playing')">Now Playing</button>
+
     <ul class="row">
 
         <li class="col-lg-4 col-sm-6 col-xs-12 card" ng-repeat="movie in getPlaying.results">

@@ -34,21 +34,23 @@ movieApp.controller('MovieController', function ($scope, $state, $stateParams, m
 
     ];
 
+    $scope.singleName = $stateParams.sortOrder;
     $scope.singlePage = $stateParams.page;
 
     $scope.getPlaying = movieService.getAllMovies($stateParams.sortOrder, $stateParams.page);
 
-    //$scope.refresh = function () {
-    //    $log.debug($state.current);
-    //    $state.reload();
-    //};
 
     $scope.reload = function (value) {
-        //console.log($scope.sortOrder.value)
         $stateParams.page = 1;
-        $state.go('movieApp.movies', {sortOrder: value, page: $stateParams.page});//{notify: false})
-        // $scope.getPlaying = movieService.getAllMovies($stateParams.sortOrder, $stateParams.page);
+        $state.go('movieApp.movies', {sortOrder: value, page: $stateParams.page});
+        console.log($scope.getPlaying )
     };
+
+    //$scope.movieGenre = 'Now Playing';
+    //
+    //$scope.name = function(name){
+    //    $scope.movieGenre = name;
+    //}
 
     $scope.next = function () {
         $scope.singlePage++;

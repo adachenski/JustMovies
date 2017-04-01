@@ -39,6 +39,25 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             //    }
             //}
         })
+        .state('movieApp.similar', {
+            url: 'movies/:eventId/:similar/:page',
+            views: {
+                'header@': {
+                    templateUrl: 'views/secondHeader.html'
+                },
+                'body-container@': {
+                    templateUrl: 'views/similar.html',
+                    controller: 'SingleMovieController'
+                }
+            }
+            //resolve:{
+            //    getMovie:'getMovie',
+            //    customer:function(getMovie, $stateParams){
+            //        var eventId = $stateParams.eventId;
+            //        return getMovie.get({eventId:eventId}).$promise;
+            //    }
+            //}
+        })
         .state('movieApp.movies', {
             url: 'movies/:sortOrder/:page',
             params:{

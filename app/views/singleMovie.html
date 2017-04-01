@@ -136,6 +136,9 @@
     </div>
 
     <h1 ng-show="similar.results.length" class="teko-style">Similar Movies</h1>
+    <!--<div><a ui-sref="movieApp.tv({order:'airing_today',page:'1'})">Airing Today</a></div>-->
+
+    <a ui-sref="movieApp.similar({eventId:singleMovieId,similar:'similar',page:'1'})">Get Similars</a>
 
     <div ng-show="similar.results.length" class="inline-show-list style-3">
 
@@ -150,7 +153,6 @@
                 <div class="long-text"><strong>{{tv.title}}</strong></div>
             </div>
         </div>
-
     </div>
 
     <h1 ng-show="recommendations.results.length" class="teko-style">Recommended </h1>

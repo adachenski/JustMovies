@@ -1,8 +1,6 @@
 /**
  * Created by Administrator on 3/29/2017.
  */
-
-
 var slideIndex = 1;
 showDivs(slideIndex);
 
