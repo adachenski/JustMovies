@@ -292,9 +292,9 @@ svg {
     background-color: lightgray;
 }
 
- .movies {
-     height: 220px;
- }
+.movies {
+    height: 220px;
+}
 
 .movies div {
     height: inherit;
@@ -333,6 +333,27 @@ svg {
         font-size: 2.6em;
     }
 }
-select{
+
+select {
     border-radius: 0 !important;
+}
+
+.show-arrow {
+    z-index: 10;
+    font-size: 2.4em;
+    background-color: #F4F4F4;
+    padding: 5px 10px;
+    top: 38%;
+    position: absolute;
+}
+
+.rightArrow, .rightArrow2{
+
+    left: 13px;
+
+}
+
+.leftArrow, .leftArrow2{
+    right: 13px;
+
 }

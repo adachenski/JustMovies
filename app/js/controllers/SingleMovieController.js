@@ -3,11 +3,9 @@
  */
 'use strict';
 
-movieApp.controller('SingleMovieController',function($scope,$stateParams, movieService,$sce){
+movieApp.controller('SingleMovieController',function($state, $scope,$stateParams, movieService,$sce){
 
     $scope.similar = movieService.similarMovies($stateParams.eventId);
-
-    $scope.singleSimilar = movieService.similarMovies2($stateParams.eventId,'similar','1');
 
     console.log($scope.singleSimilar);
 
@@ -36,4 +34,5 @@ movieApp.controller('SingleMovieController',function($scope,$stateParams, movieS
         $scope.urls = urlArr;
 
     });
+
 });

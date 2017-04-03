@@ -125,7 +125,6 @@
     </div>
 
 
-
     <h1 ng-hide="!urls.length" class="teko-style"> Videos</h1>
 
     <div class="row movies" ng-hide="!urls.length">
@@ -148,56 +147,84 @@
 
     <h1 ng-show="similar.results.length" class="teko-style">Similar Shows</h1>
 
-    <div ng-show="similar.results.length" class="inline-show-list style-3">
+    <div ng-show="similar.results.length"  class="row" style="position: relative">
 
-        <div ng-repeat="tv in similar.results">
+        <a href="#" class="rightArrow show-arrow">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="leftArrow show-arrow">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
 
-            <div>
-                <a ng-show="tv.poster_path"  ui-sref="movieApp.tvSingle({order:tv.id})">
-                    <img title="{{tv.name}}" height="280" width="185"
-                         ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.name}}"/>
-                </a>
-                <div ng-hide="tv.poster_path" class="no-poster">
-                    <p style="padding-top: 50%; text-align: center">
-                        <strong>
-                            No Poster Available
-                            <br/> for this Show
-                        </strong>
-                    </p>
+        <div class="col-xs-12">
+            <div class="inline-show-list style-3 innerWrapper">
+
+                <div ng-repeat="tv in similar.results">
+
+                    <div>
+                        <a ng-show="tv.poster_path" ui-sref="movieApp.tvSingle({order:tv.id})">
+                            <img title="{{tv.name}}" height="280" width="185"
+                                 ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
+                                 alt="{{tv.name}}"/>
+                        </a>
+
+                        <div ng-hide="tv.poster_path" class="no-poster">
+                            <p style="padding-top: 50%; text-align: center">
+                                <strong>
+                                    No Poster Available
+                                    <br/> for this Show
+                                </strong>
+                            </p>
+                        </div>
+
+                        <div class="long-text"><strong>{{tv.name}}</strong></div>
+                    </div>
                 </div>
 
-                <div class="long-text"><strong>{{tv.name}}</strong></div>
             </div>
         </div>
-
     </div>
     <h1 ng-show="recommendations.results.length" class="teko-style">Recommended </h1>
 
-    <div ng-show="recommendations.results.length" class="inline-show-list style-3">
+    <div ng-show="recommendations.results.length" class="row" style="position: relative">
 
-        <div ng-repeat="tv in recommendations.results">
+        <a href="#" class="rightArrow2 show-arrow">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="leftArrow2 show-arrow">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
 
-            <div>
-                <a ng-show="tv.poster_path" ui-sref="movieApp.tvSingle({order:tv.id})">
-                    <img title="{{tv.name}}" height="280" width="185"
-                         ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.name}}"/>
-                </a>
+        <div class="col-xs-12">
 
-                <div ng-hide="tv.poster_path" class="no-poster">
-                    <p style="padding-top: 50%; text-align: center">
-                        <strong>
-                            No Poster Available
-                            <br/> for this Show
-                        </strong>
-                    </p>
+            <div class="inline-show-list style-3 innerWrapper2">
+
+                <div ng-repeat="tv in recommendations.results">
+
+                    <div>
+                        <a ng-show="tv.poster_path" ui-sref="movieApp.tvSingle({order:tv.id})">
+                            <img title="{{tv.name}}" height="280" width="185"
+                                 ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
+                                 alt="{{tv.name}}"/>
+                        </a>
+
+                        <div ng-hide="tv.poster_path" class="no-poster">
+                            <p style="padding-top: 50%; text-align: center">
+                                <strong>
+                                    No Poster Available
+                                    <br/> for this Show
+                                </strong>
+                            </p>
+                        </div>
+                        <div class="long-text"><strong>{{tv.name}}</strong></div>
+                    </div>
                 </div>
-                <div class="long-text"><strong>{{tv.name}}</strong></div>
             </div>
         </div>
-
     </div>
 
     <hr/>
 </div>
 <script src="js/movieApp.js"></script>
+<script src="js/slider.js"></script>
 <!--<div parallax-background parallax-ratio="0.5" class="main-img-container"></div>-->

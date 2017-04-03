@@ -8,7 +8,7 @@
     <div class="col-sm-4 col-xs-2"></div>
     <div class="col-sm-8 col-xs-10">
         <div>
-           {{singleMovie.runtime}}m
+            {{singleMovie.runtime}}m
         </div>
         <div><i class="fa fa-imdb fa-lg" aria-hidden="true"></i> {{singleMovie.vote_average}}</div>
         <div>{{singleMovie.status}}</div>
@@ -53,10 +53,10 @@
     <p></p>
 
     <!--<div class="row">-->
-        <!--<div class="col-sm-3"></div>-->
-        <!--<div class="col-sm-3"> First on the Air: {{singleMovie.first_air_date | date}}</div>-->
-        <!--<div class="col-sm-3"> Last episode: {{singleMovie.last_air_date | date}}</div>-->
-        <!--<div class="col-sm-3"></div>-->
+    <!--<div class="col-sm-3"></div>-->
+    <!--<div class="col-sm-3"> First on the Air: {{singleMovie.first_air_date | date}}</div>-->
+    <!--<div class="col-sm-3"> Last episode: {{singleMovie.last_air_date | date}}</div>-->
+    <!--<div class="col-sm-3"></div>-->
     <!--</div>-->
 
     <div class="row">
@@ -70,7 +70,7 @@
             </h3>
         </div>
         <div class="col-sm-3"></div>
-        <div class="col-sm-9"> <h4><strong>{{singleMovie.tagline}}</strong></h4></div>
+        <div class="col-sm-9"><h4><strong>{{singleMovie.tagline}}</strong></h4></div>
     </div>
 
     <div class="row">
@@ -90,7 +90,7 @@
 
     <div class="row">
         <div class="col-sm-3"></div>
-        <div  class="col-sm-9">
+        <div class="col-sm-9">
             <span ng-repeat="company in singleMovie.production_companies">
                 <strong>{{company.name}} &nbsp;</strong>
             </span>
@@ -112,7 +112,6 @@
                </span>
         </div>
     </div>
-
 
 
     <h1 ng-hide="!urls.length" class="teko-style"> Videos</h1>
@@ -138,43 +137,68 @@
     <h1 ng-show="similar.results.length" class="teko-style">Similar Movies</h1>
     <!--<div><a ui-sref="movieApp.tv({order:'airing_today',page:'1'})">Airing Today</a></div>-->
 
-    <a ui-sref="movieApp.similar({eventId:singleMovieId,similar:'similar',page:'1'})">Get Similars</a>
+    <a ui-sref="movieApp.similar({movie:'movie',eventId:singleMovieId,similar:'similar',page:'1'})">Get Similars</a>
 
-    <div ng-show="similar.results.length" class="inline-show-list style-3">
+    <div class="row" ng-show="similar.results.length" style="position: relative;">
 
-        <div ng-repeat="tv in similar.results">
+        <a href="#" class="rightArrow show-arrow">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="leftArrow show-arrow">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
 
-            <div>
-                <a ui-sref="movieApp.single({eventId:tv.id})">
-                    <img title="{{tv.title}}" height="280" width="185" style="background-color: darkgray; "
-                         ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.title}}"/>
-                </a>
+        <div class="col-xs-12">
+            <div class="inline-show-list style-3 innerWrapper">
 
-                <div class="long-text"><strong>{{tv.title}}</strong></div>
+                <div ng-repeat="tv in similar.results">
+
+                    <div>
+                        <a ui-sref="movieApp.single({eventId:tv.id})">
+                            <img title="{{tv.title}}" height="280" width="185" style="background-color: darkgray; "
+                                 ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
+                                 alt="{{tv.title}}"/>
+                        </a>
+
+                        <div class="long-text"><strong>{{tv.title}}</strong></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <h1 ng-show="recommendations.results.length" class="teko-style">Recommended </h1>
 
-    <div ng-show="recommendations.results.length" class="inline-show-list style-3">
+    <div ng-show="recommendations.results.length"  class="row" style="position: relative;">
 
-        <div ng-repeat="tv in recommendations.results">
+        <a href="#" class="rightArrow2 show-arrow">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="leftArrow2 show-arrow">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
 
-            <div>
-                <a ui-sref="movieApp.single({eventId:tv.id})">
-                    <img title="{{tv.title}}" height="280" width="185" style="background-color: darkgray; "
-                         ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}" alt="{{tv.title}}"/>
-                </a>
+        <div class="col-xs-12">
+            <div class="inline-show-list style-3 innerWrapper2">
 
-                <div class="long-text"><strong>{{tv.title}}</strong></div>
+                <div ng-repeat="tv in recommendations.results">
+
+                    <div>
+                        <a ui-sref="movieApp.single({eventId:tv.id})">
+                            <img title="{{tv.title}}" height="280" width="185" style="background-color: darkgray; "
+                                 ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
+                                 alt="{{tv.title}}"/>
+                        </a>
+
+                        <div class="long-text"><strong>{{tv.title}}</strong></div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
-
     <hr/>
 </div>
 
 <script src="js/movieApp.js"></script>
+<script src="js/slider.js"></script>
 <!--<div parallax-background parallax-ratio="0.5" class="main-img-container"></div>-->

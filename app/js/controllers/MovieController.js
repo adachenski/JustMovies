@@ -39,6 +39,8 @@ movieApp.controller('MovieController', function ($scope, $state, $stateParams, m
 
     $scope.getPlaying = movieService.getAllMovies($stateParams.sortOrder, $stateParams.page);
 
+    //$scope.search = movieService.search();
+
 
     $scope.reload = function (value) {
         $stateParams.page = 1;

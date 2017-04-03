@@ -9,7 +9,8 @@
 
                 <div class="col-xs-12 reset-padding home-img">
                     <a ui-sref="movieApp.tvSingle({order:tv.results[1].id})">
-                        <img title="{{tv.results[firstId].name}}" ng-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2/{{tv.results[firstId].backdrop_path}}"
+                        <img title="{{tv.results[firstId].name}}"
+                             ng-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2/{{tv.results[firstId].backdrop_path}}"
                              alt="{{tv.results[firstId].name}}"/>
                     </a>
                 </div>
@@ -28,7 +29,8 @@
 
                 <div class="col-xs-6  reset-padding home-img small-img">
                     <a ui-sref="movieApp.tvSingle({order:tv.results[2].id})">
-                        <img title="{{tv.results[secondId].name}}" ng-src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{tv.results[secondId].backdrop_path}}"
+                        <img title="{{tv.results[secondId].name}}"
+                             ng-src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{tv.results[secondId].backdrop_path}}"
                              alt="{{tv.results[secondId].name}}"/>
                     </a>
 
@@ -43,7 +45,8 @@
 
                 <div class="col-xs-6 reset-padding home-img small-img">
                     <a ui-sref="movieApp.tvSingle({order:tv.results[thirdId].id})">
-                        <img title="{{tv.results[thirdId].name}}" ng-src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{tv.results[thirdId].backdrop_path}}"
+                        <img title="{{tv.results[thirdId].name}}"
+                             ng-src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{tv.results[thirdId].backdrop_path}}"
                              alt="{{tv.results[thirdId].name}}"/>
                     </a>
 
@@ -64,9 +67,10 @@
 
 
             <div class="row">
-                <div  class="col-xs-6 reset-padding home-img small-img">
+                <div class="col-xs-6 reset-padding home-img small-img">
                     <a ui-sref="movieApp.single({eventId:movie.results[thirdId].id})">
-                        <img title="{{movie.results[thirdId].title}}" ng-src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{movie.results[thirdId].backdrop_path}}"
+                        <img title="{{movie.results[thirdId].title}}"
+                             ng-src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{movie.results[thirdId].backdrop_path}}"
                              alt="{{movie.results[thirdId].title}}"/>
                     </a>
 
@@ -81,7 +85,8 @@
 
                 <div class="col-xs-6 reset-padding home-img small-img">
                     <a ui-sref="movieApp.single({eventId:movie.results[secondId].id})">
-                        <img title="{{movie.results[secondId].title}}" ng-src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{movie.results[secondId].backdrop_path}}"
+                        <img title="{{movie.results[secondId].title}}"
+                             ng-src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{movie.results[secondId].backdrop_path}}"
                              alt="{{movie.results[secondId].title}}"/>
                     </a>
 
@@ -99,7 +104,8 @@
 
                 <div class="col-sm-12 col-xs-12 reset-padding home-img">
                     <a ui-sref="movieApp.single({eventId:movie.results[firstId].id})">
-                        <img title="{{movie.results[firstId].title}}" ng-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2/{{movie.results[firstId].backdrop_path}}"
+                        <img title="{{movie.results[firstId].title}}"
+                             ng-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2/{{movie.results[firstId].backdrop_path}}"
                              alt="{{movie.results[firstId].title}}"/>
                     </a>
                 </div>
@@ -117,24 +123,37 @@
 
     <h1 class="teko-style">Popular movies</h1>
 
-    <div class="inline-show-list style-3">
+    <div class="row" style="position: relative">
 
-        <div ng-repeat="tv in popular.results" >
-            <div>
-                <a ui-sref="movieApp.single({eventId:tv.id})">
-                <img title="{{tv.name}}" height="280" width="185"
-                     style="background-color: darkgray;"
-                     ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
-                     alt="{{tv.name}}"/>
-                </a>
-                <div class="long-text"><strong>{{tv.title}}</strong></div>
+        <a href="#" class="rightArrow show-arrow">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="leftArrow show-arrow">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
+
+        <div class="col-xs-12">
+            <div class="inline-show-list style-3 innerWrapper">
+                <div ng-repeat="tv in popular.results">
+                    <div>
+                        <a ui-sref="movieApp.single({eventId:tv.id})">
+                            <img title="{{tv.name}}" height="280" width="185"
+                                 style="background-color: darkgray;"
+                                 ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
+                                 alt="{{tv.name}}"/>
+                        </a>
+
+                        <div class="long-text"><strong>{{tv.title}}</strong></div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
+
     <hr/>
+    <script src="js/slider.js"></script>
 </div>
 
-</div>
+
 
 

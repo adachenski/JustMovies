@@ -47,16 +47,9 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
                 },
                 'body-container@': {
                     templateUrl: 'views/similar.html',
-                    controller: 'SingleMovieController'
+                    controller: 'PagenationController'
                 }
             }
-            //resolve:{
-            //    getMovie:'getMovie',
-            //    customer:function(getMovie, $stateParams){
-            //        var eventId = $stateParams.eventId;
-            //        return getMovie.get({eventId:eventId}).$promise;
-            //    }
-            //}
         })
         .state('movieApp.movies', {
             url: 'movies/:sortOrder/:page',
