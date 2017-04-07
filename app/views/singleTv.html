@@ -48,7 +48,8 @@
          class="poster-container">
         <div class="col-sm-12 hidden-xs reset-padding">
             <a href="{{singleTv.homepage}}">
-                <img ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{singleTv.poster_path}}" alt=""/>
+                <img ng-show="singleTv.poster_path" ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{singleTv.poster_path}}" alt=""/>
+                <img ng-hide="singleTv.poster_path" width="100%" ng-src="static/no-image-185x278.jpg" alt=""/>
             </a>
         </div>
     </div>

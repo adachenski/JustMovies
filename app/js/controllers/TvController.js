@@ -19,7 +19,6 @@ movieApp.controller('TvController', function ($scope, $stateParams, $state, tvSe
     $scope.reloadTv = function () {
         $scope.singlePage = 1;
         $state.go('movieApp.tv', {order: $scope.order.value, page: $scope.singlePage})//, {notify: false});
-        console.log($scope.order.value);
         //$scope.allShows = tvService.getShows($scope.order.value, $scope.singlePage);
     };
 

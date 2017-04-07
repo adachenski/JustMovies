@@ -39,20 +39,12 @@ movieApp.controller('MovieController', function ($scope, $state, $stateParams, m
 
     $scope.getPlaying = movieService.getAllMovies($stateParams.sortOrder, $stateParams.page);
 
-    //$scope.search = movieService.search();
-
 
     $scope.reload = function (value) {
         $stateParams.page = 1;
         $state.go('movieApp.movies', {sortOrder: value, page: $stateParams.page});
         console.log($scope.getPlaying )
     };
-
-    //$scope.movieGenre = 'Now Playing';
-    //
-    //$scope.name = function(name){
-    //    $scope.movieGenre = name;
-    //}
 
     $scope.next = function () {
         $scope.singlePage++;

@@ -24,7 +24,8 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             url: 'movies/:eventId',
             views: {
                 'header@': {
-                    templateUrl: 'views/secondHeader.html'
+                    templateUrl: '../views/movieHeader.html',
+                    controller:'MovieHeaderController'
                 },
                 'body-container@': {
                     templateUrl: 'views/singleMovie.html',
@@ -43,7 +44,8 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             url: 'movies/:eventId/:similar/:page',
             views: {
                 'header@': {
-                    templateUrl: 'views/secondHeader.html'
+                    templateUrl: '../views/movieHeader.html',
+                    controller:'MovieHeaderController'
                 },
                 'body-container@': {
                     templateUrl: 'views/similar.html',
@@ -63,7 +65,8 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             },
             views: {
                 'header@': {
-                    templateUrl: 'views/secondHeader.html'
+                    templateUrl: '../views/movieHeader.html',
+                    controller:'MovieHeaderController'
                 },
                 'body-container@': {
                     templateUrl: '../views/movie.html',
@@ -80,7 +83,7 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             },
             views: {
                 'header@': {
-                    templateUrl: 'views/secondHeader.html'
+                    templateUrl: '../views/tvHeader.html'
                 },
                 'body-container@': {
                     templateUrl: 'views/tv.html',
@@ -92,7 +95,7 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             url: 'tv/:order',
             views: {
                 'header@': {
-                    templateUrl: 'views/secondHeader.html'
+                    templateUrl: '../views/tvHeader.html'
                 },
                 'body-container@': {
                     templateUrl: 'views/singleTv.html',
