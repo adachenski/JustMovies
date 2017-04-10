@@ -294,6 +294,7 @@ svg {
 
 .movies {
     height: 220px;
+    margin-bottom: 40px;
 }
 
 .movies div {
@@ -357,10 +358,17 @@ select {
     right: 13px;
 
 }
+
+@media only screen and (max-width: 480px) {
+.searchResultInput{
+    position: absolute;
+    width: 290px !important;
+    z-index: 10;
+}
+}
 .searchInput {
     padding: 10px 10px;
     position: relative;
-
 }
 
 .searchResultInput {
@@ -378,4 +386,52 @@ select {
 .searchResultInput > div:hover {
     background-color: #F8F1BE;
     cursor: hand;
+}
+
+.person-details{
+    padding: 5px;
+    margin: 0px 5px;
+    text-align: center;
+    width: 120px;
+    height: 200px;
+}
+.person-details > div:nth-child(1){
+    height: 40px;
+}
+.person-details > div:nth-child(2){
+    padding: 5px;
+}
+.person-details > div img{
+    padding: 5px;
+}
+.person-box{
+    background-color: #ffffff;
+    opacity: 0.9;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.full-crew{
+    height: 130px;
+    width: 250px;
+
+
+}
+.full-crew>div>img{
+    padding: 5px;
+    margin-right: 10px;
+}
+.text-shadow-cast{
+    color: #ffffff; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0px 5px 10px rgba(0, 0, 0, 0.8);
+
+}
+.cast-background{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    opacity: 0.9;
 }

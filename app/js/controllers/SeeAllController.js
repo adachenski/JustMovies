@@ -22,10 +22,10 @@ movieApp.controller('PagenationController', function ($state, $scope, $statePara
 
     $scope.prev = function () {
         $scope.singleNumber--;
-        if ($stateParams.page <= 1) {
-            $stateParams.page = 1;
+        if ($scope.singleNumber <= 1) {
+            $scope.singleNumber = 1;
         } else {
-            $scope.singlePage--;
+            $scope.singleNumber--;
             $state.go('movieApp.similar', {
                 order: $stateParams.eventId,
                 similar: $stateParams.similar,

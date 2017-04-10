@@ -1,0 +1,7 @@
+applications:
+- name: justmovies
+  memory: 256M
+  disk_quota: 512M
+  buildpack: nodejs_buildpack
+  domain: mybluemix.net
+  command: node server/web-server.js

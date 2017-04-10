@@ -4,7 +4,7 @@
 
 'use strict';
 
-movieApp.controller('MovieController', function ($scope, $state, $stateParams, movieService, $log) {
+movieApp.controller('MovieController', function ($scope, $state, $stateParams, movieService) {
 
     //$scope.sortOrder = {
     //    "value": "now_playing"
@@ -43,7 +43,6 @@ movieApp.controller('MovieController', function ($scope, $state, $stateParams, m
     $scope.reload = function (value) {
         $stateParams.page = 1;
         $state.go('movieApp.movies', {sortOrder: value, page: $stateParams.page});
-        console.log($scope.getPlaying )
     };
 
     $scope.next = function () {
@@ -52,8 +51,8 @@ movieApp.controller('MovieController', function ($scope, $state, $stateParams, m
         $scope.getPlaying = movieService.getAllMovies($stateParams.sortOrder, $scope.singlePage);
     };
     $scope.prev = function () {
-        if ($stateParams.page <= 1) {
-            $stateParams.page = 1;
+        if ($scope.singlePage <= 1) {
+            $scope.singlePage = 1;
         } else {
             $scope.singlePage--;
             $state.go('movieApp.movies', {sortOrder: $stateParams.sortOrder, page: $scope.singlePage}, {notify: false});

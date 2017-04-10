@@ -9,6 +9,13 @@ movieApp.controller('SingleMovieController',function($state, $scope,$stateParams
 
     $scope.recommendations = movieService.recommended($stateParams.eventId);
 
+    movieService.similarMovies2($stateParams.eventId, 'credits', '1')
+        .$promise
+        .then(function (result) {
+            $scope.fullCast = result;
+            console.log($scope.fullCast);
+        });
+
     movieService.singleMovie($stateParams.eventId)
         .$promise
         .then(function(res){
@@ -17,6 +24,7 @@ movieApp.controller('SingleMovieController',function($state, $scope,$stateParams
             $scope.singleMovieId = res.id;
             var backdrop = res.backdrop_path;
             $scope.imgUrl = $sce.trustAsResourceUrl('https://image.tmdb.org/t/p/original'+backdrop);
+            console.log($scope.imgUrl)
         });
 
     movieService.videos($stateParams.eventId)

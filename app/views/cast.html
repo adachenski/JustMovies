@@ -1,0 +1,65 @@
+<div class="cast-background" style=" background-image: url('{{imgUrl}}')">
+    <div class="container" >
+        <p style="padding-bottom: 60px"></p>
+
+<div class="text-shadow-cast">
+       <h1 class="teko-style"> {{singleMovie.title | uppercase}}</h1>
+    <h1 class="teko-style">CAST</h1>
+</div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-repeat="person in fullCast.cast" style="float: left">
+
+                    <div class="person-details person-box">
+                        <div>
+                            <strong>{{person.character}}</strong>
+                        </div>
+                        <div>
+                            <img ng-show="person.profile_path" class="box-shadow" width="70" ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{person.profile_path}}" alt="{{person.name}}"/>
+                            <img ng-hide="person.profile_path" width="70" ng-src="static/noPhotoPerson.jpg" alt="{{person.name}}"/>
+                        </div>
+                        <div>
+                            <strong>{{person.name}} </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-shadow-cast">
+            <h1 class="teko-style">CREW</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div ng-repeat="person in fullCast.crew" style="float: left">
+
+                    <div  class="full-crew person-box">
+
+                        <div style="float: left">
+                            <img ng-show="person.profile_path" class="box-shadow" width="70" ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{person.profile_path}}" alt="{{person.name}}"/>
+                            <img ng-hide="person.profile_path" width="70" ng-src="static/noPhotoPerson.jpg" alt="{{person.name}}"/>
+                        </div>
+
+                        <div>
+                            <h4><strong>{{person.job}}</strong></h4>
+                        </div>
+
+                        <div>
+                            <strong>{{person.name}} </strong>
+                        </div>
+
+                        <div>
+                            {{person.department}}
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -29,8 +29,8 @@ movieApp.controller('TvController', function ($scope, $stateParams, $state, tvSe
     };
 
     $scope.prev = function () {
-        if($stateParams.page <= 1){
-            $stateParams.page=1;
+        if($scope.singlePage <= 1){
+            $scope.singlePage=1;
         }
         else{
             $scope.singlePage--;

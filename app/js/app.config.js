@@ -40,6 +40,19 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             //    }
             //}
         })
+        .state('movieApp.cast', {
+            url: 'movies/:eventId/cast',
+            views: {
+                'header@': {
+                    templateUrl: '../views/movieHeader.html',
+                    controller:'MovieHeaderController'
+                },
+                'body-container@': {
+                    templateUrl: 'views/cast.html',
+                    controller: 'SingleMovieController'
+                }
+            }
+        })
         .state('movieApp.similar', {
             url: 'movies/:eventId/:similar/:page',
             views: {

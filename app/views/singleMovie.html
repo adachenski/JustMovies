@@ -76,10 +76,41 @@
 
     <div class="row">
         <div class="col-sm-3"></div>
-        <div style="min-height: 130px; overflow-y: auto" class="col-sm-9 main-font-size">
+        <div  class="col-sm-9 main-font-size">
             <div>{{singleMovie.overview}}</div>
         </div>
+    </div>
 
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9 main-font-size">
+            <h3>Cast</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 col-xs-0"></div>
+        <div class="col-sm-9 col-xs-12">
+            <div ng-repeat="person in fullCast.cast | limitTo:5" style="float: left">
+
+               <div class="person-details">
+                   <div>
+                       <strong>{{person.character}}</strong>
+                   </div>
+                   <div>
+                       <img ng-show="person.profile_path" class="box-shadow" width="70" ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{person.profile_path}}" alt="{{person.name}}"/>
+                       <img ng-hide="person.profile_path" width="70" ng-src="static/noPhotoPerson.jpg" alt="{{person.name}}"/>
+                   </div>
+                   <div>
+                       <strong>{{person.name}} </strong>
+                   </div>
+               </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-xs-0"></div>
+        <div class="col-sm-9 col-xs-12">
+            <h5><a ui-sref="movieApp.cast({eventId:fullCast.id})" >See full cast...</a></h5>
+        </div>
     </div>
 
     <div class="row">
@@ -105,7 +136,7 @@
         </div>
     </div>
 
-    <div style="min-height: 135px" class="row">
+    <div class="row">
         <div class="col-sm-3 col-xs-0"></div>
         <div class="col-sm-9 main-font-size">
            <span ng-repeat="company in singleMovie.production_countries">
