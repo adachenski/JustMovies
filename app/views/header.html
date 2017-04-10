@@ -1,16 +1,24 @@
 <div class="container-fluid header-gradient">
-
     <div class="row">
         <div class="col-sm-3">
             <!--=================================================-->
-            <div ng-include src="'views/directives/svgLogo.html'"></div>
+            <!--<div ng-include src="'views/directives/svgLogo.html'"></div>-->
             <!--=================================================-->
+            <div class="teko-style main-logo center-item">
+                <h1>JUST MOVIES</h1>
+                <img class="hidden-lg hidden-md hidden-sm" width="150" ng-src="static/movieDb.png" alt="MovieDB"/>
+            </div>
+
         </div>
         <div class="col-sm-6 hidden-xs">
             <div class="row date">
-                <div class="col-sm-12">
+                <div class="col-sm-5 col-md-4 col-lg-3" style="margin-top: 15px; margin-bottom: 5px">
+                    <img width="150" ng-src="static/movieDb.png" alt="MovieDB"/>
+                </div>
+
+                <div class="col-sm-7 col-md-8 col-lg-9" >
                     <h2 class="teko-style">
-                        Happy {{week[todayDay]}} {{today | date}}
+                        {{week[todayDay]}} {{today | date}}
                     </h2>
                 </div>
                 <div class="col-sm-12">

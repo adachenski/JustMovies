@@ -25,6 +25,9 @@ body {
     font-family: 'Nova Slim', cursive;
     font-size: 0.8em;
 }
+.nova-slim-style > div> a{
+    color: #00D474;
+}
 
 ul > li {
     display: inline-block;
@@ -291,6 +294,9 @@ svg {
     width: 185px;
     background-color: lightgray;
 }
+.center-item{
+    text-align: center;
+}
 
 .movies {
     height: 220px;
@@ -434,4 +440,11 @@ select {
     height: 100%;
     position: relative;
     opacity: 0.9;
+}
+
+.main-logo{
+    text-shadow: -1px 0 #00D474, 0 1px #00D474, 1px 0 #00D474, 0 -1px #00D474, 0px 5px 10px rgba(0, 0, 0, 0.8);
+}
+.main-logo > h1{
+    font-size: 3.2em;
 }
