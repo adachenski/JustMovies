@@ -83,8 +83,11 @@ ul > li {
 }
 
 .long-text {
-    max-width: 80%;
+    max-width: 95%;
     overflow-x: hidden;
+    white-space: nowrap;
+    color: #222222;
+    font-size: 1.2em;
 }
 
 .btn-bot {
@@ -220,20 +223,75 @@ ul > li {
     overflow-x: scroll;
     overflow-y: hidden;
     height: 320px;
-    padding: 0 15px;
-    white-space: nowrap;
+    /*padding: 0 15px;*/
+    /*white-space: nowrap;*/
     position: relative;
 }
 
 .inline-show-list > div {
-    width: 4000px;
+    width: 3840px;
 }
 
-.inline-show-list > div > div {
-    padding: 0;
+.inline-show-list > div > .picture {
+    margin-right: 7px;
     height: 280px;
-    width: 200px;
+    width: 185px;
     float: left
+}
+
+.pic-container{
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+}
+.pic-front {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: rotateY(0deg);
+}
+
+.pic-back {
+
+    position: absolute;
+    width: 95%;
+    height: 98%;
+    padding: 7px;
+    word-wrap: break-word;
+    overflow-y: hidden;
+    background-color: #222222;
+
+    color: #ffffff;
+    transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+}
+
+.picture {
+
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: all 1.0s linear;
+    -moz-transition: all 1.0s linear;
+    -o-transition: all 1.0s linear;
+    -webkit-transition: all 1.0s linear;
+
+}
+
+.pic-container :hover .picture {
+    transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+
 }
 
 .main-img-container {

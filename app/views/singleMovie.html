@@ -182,28 +182,31 @@
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </a>
 
-        <div class="col-xs-12">
-            <div class="inline-show-list style-3 innerWrapper">
-
+        <div class="col-xs-12 ">
+            <div class="inline-show-list style-3 innerWrapper pic-container">
                 <div ng-repeat="tv in similar.results">
+                    <div class="picture">
+                        <a ui-sref="movieApp.single({eventId:tv.id})">
+                            <div class="pic-front">
+                                <img class="box-shadow" title="{{tv.name}}"
+                                     ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
+                                     alt="{{tv.name}}"/>
 
-                    <div>
-                        <a ng-show="tv.poster_path" ui-sref="movieApp.single({eventId:tv.id})">
-                            <img  title="{{tv.title}}" height="280" width="185" style="background-color: darkgray; "
-                                 ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
-                                 alt="{{tv.title}}"/>
+                                <div class="long-text teko-style"><strong>{{tv.title}}</strong></div>
+                            </div>
 
+                            <div class="pic-back">
+                                <h4 class="teko-style">{{tv.original_title}}
+                                    <span style="float: right; clear: left">
+                                       <i class="fa fa-imdb" aria-hidden="true"></i>
+                                    {{tv.vote_average}}
+                                    </span>
+                                </h4>
+                                <div class="nova-slim-style">
+                                    {{tv.overview}}
+                                </div>
+                            </div>
                         </a>
-                        <div ng-hide="tv.poster_path" class="no-poster">
-                            <p style="padding-top: 50%; text-align: center">
-                                <strong>
-                                    No Poster Available
-                                    <br/> for this Show
-                                </strong>
-                            </p>
-                        </div>
-
-                        <div class="long-text"><strong>{{tv.title}}</strong></div>
                     </div>
                 </div>
             </div>
@@ -221,26 +224,31 @@
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </a>
 
-        <div class="col-xs-12">
-            <div class="inline-show-list style-3 innerWrapper2">
-
+        <div class="col-xs-12 ">
+            <div class="inline-show-list style-3 innerWrapper pic-container">
                 <div ng-repeat="tv in recommendations.results">
+                    <div class="picture">
+                        <a ui-sref="movieApp.single({eventId:tv.id})">
+                            <div class="pic-front">
+                                <img class="box-shadow" title="{{tv.name}}"
+                                     ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
+                                     alt="{{tv.name}}"/>
 
-                    <div>
-                        <a ng-show="tv.poster_path" ui-sref="movieApp.single({eventId:tv.id})">
-                            <img  title="{{tv.title}}" height="280" width="185" style="background-color: darkgray; "
-                                 ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
-                                 alt="{{tv.title}}"/>
+                                <div class="long-text teko-style"><strong>{{tv.title}}</strong></div>
+                            </div>
+
+                            <div class="pic-back">
+                                <h4 class="teko-style">{{tv.original_title}}
+                                    <span style="float: right; clear: left">
+                                       <i class="fa fa-imdb" aria-hidden="true"></i>
+                                    {{tv.vote_average}}
+                                    </span>
+                                </h4>
+                                <div class="nova-slim-style">
+                                    {{tv.overview}}
+                                </div>
+                            </div>
                         </a>
-                        <div ng-hide="tv.poster_path" class="no-poster">
-                            <p style="padding-top: 50%; text-align: center">
-                                <strong>
-                                    No Poster Available
-                                    <br/> for this Show
-                                </strong>
-                            </p>
-                        </div>
-                        <div class="long-text"><strong>{{tv.title}}</strong></div>
                     </div>
                 </div>
             </div>
