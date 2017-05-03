@@ -4,6 +4,7 @@ var express = require('express'),
     rootPath = path.normalize(__dirname + '/../'),
     bodyParser = require('body-parser');
 var port = process.env.PORT || 9000;
+
 app.use(express.static(rootPath + '/app'));
 
 app.get('*', function (req, res) {

@@ -53,19 +53,6 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
                 }
             }
         })
-        .state('movieApp.similar', {
-            url: 'movies/:eventId/:similar/:page',
-            views: {
-                'header@': {
-                    templateUrl: '../views/movieHeader.html',
-                    controller:'MovieHeaderController'
-                },
-                'body-container@': {
-                    templateUrl: 'views/similar.html',
-                    controller: 'PagenationController'
-                }
-            }
-        })
         .state('movieApp.movies', {
             url: 'movies/:sortOrder/:page',
             params:{
@@ -87,6 +74,31 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
                 }
             }
         })
+        .state('movieApp.similar', {
+            url: 'movies/:eventId/:similar/:page',
+            views: {
+                'header@': {
+                    templateUrl: '../views/movieHeader.html',
+                    controller:'MovieHeaderController'
+                },
+                'body-container@': {
+                    templateUrl: 'views/similar.html',
+                    controller: 'PagenationController'
+                }
+            }
+        })
+        .state('movieApp.tvSingle', {
+            url: 'tv/:order',
+            views: {
+                'header@': {
+                    templateUrl: '../views/tvHeader.html'
+                },
+                'body-container@': {
+                    templateUrl: 'views/singleTv.html',
+                    controller: 'SingleTvController'
+                }
+            }
+        })
         .state('movieApp.tv', {
             url: 'tv/:order/:page',
             params: {
@@ -101,18 +113,6 @@ movieApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
                 'body-container@': {
                     templateUrl: 'views/tv.html',
                     controller: 'TvController'
-                }
-            }
-        })
-        .state('movieApp.tvSingle', {
-            url: 'tv/:order',
-            views: {
-                'header@': {
-                    templateUrl: '../views/tvHeader.html'
-                },
-                'body-container@': {
-                    templateUrl: 'views/singleTv.html',
-                    controller: 'SingleTvController'
                 }
             }
         });

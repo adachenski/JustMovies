@@ -4,7 +4,7 @@
 movieApp.controller('PagenationController', function ($state, $scope, $stateParams, movieService) {
     $scope.singleNumber = $stateParams.page;
 
-    movieService.similarMovies2($stateParams.eventId, $stateParams.similar, '1')
+    movieService.similarMovies2($stateParams.eventId, $stateParams.similar, $stateParams.page)
         .$promise
         .then(function (result) {
             $scope.singleSimilar = result;

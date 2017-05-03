@@ -13,7 +13,6 @@ movieApp.controller('SingleMovieController',function($state, $scope,$stateParams
         .$promise
         .then(function (result) {
             $scope.fullCast = result;
-            console.log($scope.fullCast);
         });
 
     movieService.singleMovie($stateParams.eventId)
@@ -24,7 +23,6 @@ movieApp.controller('SingleMovieController',function($state, $scope,$stateParams
             $scope.singleMovieId = res.id;
             var backdrop = res.backdrop_path;
             $scope.imgUrl = $sce.trustAsResourceUrl('https://image.tmdb.org/t/p/original'+backdrop);
-            console.log($scope.imgUrl)
         });
 
     movieService.videos($stateParams.eventId)
