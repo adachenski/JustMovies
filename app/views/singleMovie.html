@@ -146,7 +146,7 @@
     </div>
 
 
-    <h1 ng-hide="!urls.length" class="teko-style"> Videos</h1>
+    <h2 ng-hide="!urls.length" class="teko-style"> Videos</h2>
 
     <div class="row movies" ng-hide="!urls.length">
 
@@ -166,9 +166,13 @@
         </div>
     </div>
 
-    <h1 ng-show="similar.results.length" class="teko-style">
-        <a ui-sref="movieApp.similar({movie:'movie',eventId:singleMovieId,similar:'similar',page:'1'})">Similar Movies</a>
-    </h1>
+    <h2 ng-show="similar.results.length" class="teko-style">
+        Similar Movies |
+        <a
+           ui-sref="movieApp.similar({movie:'movie',eventId:singleMovieId,similar:'similar',page:'1'})">
+            More...
+        </a>
+    </h2>
     <!--<div><a ui-sref="movieApp.tv({order:'airing_today',page:'1'})">Airing Today</a></div>-->
 
 
@@ -213,7 +217,7 @@
         </div>
     </div>
 
-    <h1 ng-show="recommendations.results.length" class="teko-style">Recommended </h1>
+    <h2 ng-show="recommendations.results.length" class="teko-style">Recommended </h2>
 
     <div ng-show="recommendations.results.length"  class="row" style="position: relative;">
 
@@ -225,7 +229,7 @@
         </a>
 
         <div class="col-xs-12 ">
-            <div class="inline-show-list style-3 innerWrapper pic-container">
+            <div class="inline-show-list style-3 innerWrapper2 pic-container">
                 <div ng-repeat="tv in recommendations.results">
                     <div class="picture">
                         <a ui-sref="movieApp.single({eventId:tv.id})">

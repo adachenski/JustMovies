@@ -126,7 +126,7 @@
     </div>
 
 
-    <h1 ng-hide="!urls.length" class="teko-style"> Videos</h1>
+    <h2 ng-hide="!urls.length" class="teko-style"> Videos</h2>
 
     <div class="row movies" ng-hide="!urls.length">
 
@@ -146,7 +146,7 @@
         </div>
     </div>
 
-    <h1 ng-show="similar.results.length" class="teko-style">Similar Shows</h1>
+    <h2 ng-show="similar.results.length" class="teko-style">Similar Shows</h2>
 
     <div ng-show="similar.results.length"  class="row" style="position: relative">
 
@@ -163,15 +163,15 @@
                     <div class="picture">
                         <a ui-sref="movieApp.single({eventId:tv.id})">
                             <div class="pic-front">
-                                <img class="box-shadow" title="{{tv.name}}"
+                                <img class="box-shadow" title="{{tv.original_name}}"
                                      ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
                                      alt="{{tv.name}}"/>
 
-                                <div class="long-text teko-style"><strong>{{tv.title}}</strong></div>
+                                <div class="long-text teko-style"><strong>{{tv.original_name}}</strong></div>
                             </div>
 
                             <div class="pic-back">
-                                <h4 class="teko-style">{{tv.original_title}}
+                                <h4 class="teko-style">{{tv.original_name}}
                                     <span style="float: right; clear: left">
                                        <i class="fa fa-imdb" aria-hidden="true"></i>
                                     {{tv.vote_average}}
@@ -187,7 +187,7 @@
             </div>
         </div>
     </div>
-    <h1 ng-show="recommendations.results.length" class="teko-style">Recommended </h1>
+    <h2 ng-show="recommendations.results.length" class="teko-style">Recommended </h2>
 
     <div ng-show="recommendations.results.length" class="row" style="position: relative">
 
@@ -199,20 +199,20 @@
         </a>
 
         <div class="col-xs-12 ">
-            <div class="inline-show-list style-3 innerWrapper pic-container">
+            <div class="inline-show-list style-3 innerWrapper2 pic-container">
                 <div ng-repeat="tv in recommendations.results">
                     <div class="picture">
                         <a ui-sref="movieApp.single({eventId:tv.id})">
                             <div class="pic-front">
-                                <img class="box-shadow" title="{{tv.name}}"
+                                <img class="box-shadow" title="{{tv.original_name}}"
                                      ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{tv.poster_path}}"
                                      alt="{{tv.name}}"/>
 
-                                <div class="long-text teko-style"><strong>{{tv.title}}</strong></div>
+                                <div class="long-text teko-style"><strong>{{tv.original_name}}</strong></div>
                             </div>
 
                             <div class="pic-back">
-                                <h4 class="teko-style">{{tv.original_title}}
+                                <h4 class="teko-style">{{tv.original_name}}
                                     <span style="float: right; clear: left">
                                        <i class="fa fa-imdb" aria-hidden="true"></i>
                                     {{tv.vote_average}}
