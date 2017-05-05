@@ -146,23 +146,31 @@
     </div>
 
 
-    <h2 ng-hide="!urls.length" class="teko-style"> Videos</h2>
+    <h1 ng-hide="!urls.length" class="teko-style"> Videos</h1>
 
     <div class="row movies" ng-hide="!urls.length">
 
         <div class="col-xs-3 col-sm-2">
-            <button class="btn btn-default box-shadow" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btn btn-default box-shadow" onclick="plusDivs(-1)">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
         </div>
 
-        <div class="col-xs-6 col-sm-8">
-            <iframe class="mySlides" ng-repeat="video in urls"
-                    width="100%" style="height: inherit"
-                    ng-src="{{video}}" frameborder="0" allowfullscreen>
-            </iframe>
+        <div  class="col-xs-6 col-sm-8">
+            <div class="mySlides" ng-repeat="vid in urls">
+                <h3>{{vid.name}} | {{vid.type}}</h3>
+                <iframe
+                        width="100%" style="height: inherit"
+                        ng-src="{{vid.video}}" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+
         </div>
 
         <div class="col-xs-3 col-sm-2">
-            <button class="btn btn-default  box-shadow" onclick="plusDivs(1)">&#10095;</button>
+            <button class="btn btn-default box-shadow" onclick="plusDivs(1)">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
         </div>
     </div>
 

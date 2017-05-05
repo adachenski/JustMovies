@@ -7,7 +7,6 @@ showDivs(slideIndex);
 
 function plusDivs(n) {
     showDivs(slideIndex += n);
-    console.log('pushed');
 }
 
 setTimeout(function () {

@@ -19,7 +19,6 @@ movieApp.controller('SingleMovieController',function($state, $scope,$stateParams
         .$promise
         .then(function(res){
             $scope.singleMovie = res;
-
             $scope.singleMovieId = res.id;
             var backdrop = res.backdrop_path;
             $scope.imgUrl = $sce.trustAsResourceUrl('https://image.tmdb.org/t/p/original'+backdrop);
@@ -28,12 +27,25 @@ movieApp.controller('SingleMovieController',function($state, $scope,$stateParams
     movieService.videos($stateParams.eventId)
         .$promise
         .then(function(res){
-        $scope.videos = res.results;
+          // $scope.videos = res.results;
+          //  console.log($scope.videos);
+          $scope.info = res.results;
         var urlArr =[];
         for(var r in res.results){
-            var x = res.results[r].key;
-            urlArr.push($sce.trustAsResourceUrl('https://www.youtube.com/embed/'+x));
+            var key = res.results[r].key;
+            //var type = res.results[r].type;
+            //var name = res.results[r].name;
+            var obj = {};
+            //console.log(res.results[r]);
+            obj.video = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+key);
+            obj.type = res.results[r].type;
+            obj.name = res.results[r].name;
+            urlArr.push(obj);
+            //urlArr.push($sce.trustAsResourceUrl('https://www.youtube.com/embed/'+key));
+            //urlArr.push(type);
+            //urlArr.push(name);
         }
         $scope.urls = urlArr;
+            console.log($scope.urls);
     });
 });

@@ -98,8 +98,14 @@ ul > li {
     bottom: 10px;
 }
 
-.home-cell {
+.main-box{
+    display: flex;
+    flex-wrap: wrap; /* optional. only if you want the items to wrap */
+    justify-content: center; /* for horizontal alignment */
+    align-items: center; /
+}
 
+.home-cell {
     position: relative;
     max-width: 500px;
 }
