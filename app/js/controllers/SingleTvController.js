@@ -21,8 +21,13 @@ movieApp.controller('SingleTvController',function($scope,$stateParams, tvService
         $scope.videos = res.results;
         var urlArr =[];
         for(var r in res.results){
-            var x = res.results[r].key;
-            urlArr.push($sce.trustAsResourceUrl('https://www.youtube.com/embed/'+x));
+            var key = res.results[r].key;
+           // urlArr.push($sce.trustAsResourceUrl('https://www.youtube.com/embed/'+x));
+            var obj = {};
+            obj.video = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+key);
+            obj.type = res.results[r].type;
+            obj.name = res.results[r].name;
+            urlArr.push(obj);
         }
         $scope.urls = urlArr;
 

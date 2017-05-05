@@ -145,37 +145,49 @@
         </div>
     </div>
 
+    <h1 ng-hide="!urls.length" class="text max-width"> Videos</h1>
 
-    <h1 ng-hide="!urls.length" class="teko-style"> Videos</h1>
+        <div class="row" ng-hide="!urls.length">
+            <div class="col-sm-3"></div>
+            <div class="mySlides col-xs-12 col-sm-6" ng-repeat="vid in urls">
 
-    <div class="row movies" ng-hide="!urls.length">
+                <div class="example hidden-xs">
+                    <div class="button-group">
+                        <div class="text">
+                            {{vid.type}}
+                        </div>
+                        <div class="icon">
+                            {{vid.name}}
+                        </div>
+                    </div>
+                </div>
 
-        <div class="col-xs-3 col-sm-2">
-            <button class="btn btn-default box-shadow" onclick="plusDivs(-1)">
-                <i class="fa fa-angle-left" aria-hidden="true"></i>
-            </button>
-        </div>
-
-        <div  class="col-xs-6 col-sm-8">
-            <div class="mySlides" ng-repeat="vid in urls">
-                <h3>{{vid.name}} | {{vid.type}}</h3>
-                <iframe
-                        width="100%" style="height: inherit"
-                        ng-src="{{vid.video}}" frameborder="0" allowfullscreen>
-                </iframe>
+                <div class="video-container " style="display: inline">
+                    <iframe width="100%"  style="height: inherit"
+                            ng-src="{{vid.video}}" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
             </div>
-
+            <div class="col-sm-3"></div>
         </div>
-
-        <div class="col-xs-3 col-sm-2">
-            <button class="btn btn-default box-shadow" onclick="plusDivs(1)">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <div class="row" ng-hide="!urls.length">
+        <div class="col-sm-3 hidden-xs"></div>
+        <div class="col-xs-6 col-sm-3">
+            <button class="btn btn-default box-shadow video-button text" onclick="plusDivs(-1)">
+                prev
             </button>
         </div>
+
+        <div class="col-xs-6 col-sm-3">
+            <button class="btn btn-default box-shadow video-button text" onclick="plusDivs(1)">
+                next
+            </button>
+        </div>
+        <div class="col-sm-3 hidden-xs"></div>
     </div>
 
-    <h2 ng-show="similar.results.length" class="teko-style">
-        Similar Movies |
+    <h2 ng-show="similar.results.length" class="text max-width">
+        Similar <span class="hidden-xs">Movies</span> |
         <a
            ui-sref="movieApp.similar({movie:'movie',eventId:singleMovieId,similar:'similar',page:'1'})">
             More...
@@ -225,7 +237,7 @@
         </div>
     </div>
 
-    <h2 ng-show="recommendations.results.length" class="teko-style">Recommended </h2>
+    <h2 ng-show="recommendations.results.length" class="text max-width">Recommended </h2>
 
     <div ng-show="recommendations.results.length"  class="row" style="position: relative;">
 

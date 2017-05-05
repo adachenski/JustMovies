@@ -33,17 +33,12 @@ movieApp.controller('SingleMovieController',function($state, $scope,$stateParams
         var urlArr =[];
         for(var r in res.results){
             var key = res.results[r].key;
-            //var type = res.results[r].type;
-            //var name = res.results[r].name;
+
             var obj = {};
-            //console.log(res.results[r]);
             obj.video = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+key);
             obj.type = res.results[r].type;
             obj.name = res.results[r].name;
             urlArr.push(obj);
-            //urlArr.push($sce.trustAsResourceUrl('https://www.youtube.com/embed/'+key));
-            //urlArr.push(type);
-            //urlArr.push(name);
         }
         $scope.urls = urlArr;
             console.log($scope.urls);

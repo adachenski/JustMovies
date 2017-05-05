@@ -126,27 +126,68 @@
     </div>
 
 
-    <h2 ng-hide="!urls.length" class="teko-style"> Videos</h2>
+    <!--<h2 ng-hide="!urls.length" class="teko-style"> Videos</h2>-->
 
-    <div class="row movies" ng-hide="!urls.length">
+    <!--<div class="row movies" ng-hide="!urls.length">-->
 
-        <div class="col-xs-3 col-sm-2">
-            <button class="btn btn-default box-shadow" onclick="plusDivs(-1)">&#10094;</button>
+        <!--<div class="col-xs-3 col-sm-2">-->
+            <!--<button class="btn btn-default box-shadow" onclick="plusDivs(-1)">&#10094;</button>-->
+        <!--</div>-->
+
+        <!--<div class="col-xs-6 col-sm-8">-->
+            <!--<iframe class="mySlides" ng-repeat="video in urls"-->
+                    <!--width="100%" style="height: inherit; border: 0"-->
+                    <!--ng-src="{{video}}" frameborder="0" allowfullscreen>-->
+            <!--</iframe>-->
+        <!--</div>-->
+
+        <!--<div class="col-xs-3 col-sm-2">-->
+            <!--<button class="btn btn-default  box-shadow" onclick="plusDivs(1)">&#10095;</button>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <h1 ng-hide="!urls.length" class="text max-width"> Videos</h1>
+
+    <div class="row" ng-hide="!urls.length">
+        <div class="col-sm-3"></div>
+        <div class="mySlides col-xs-12 col-sm-6" ng-repeat="vid in urls">
+
+            <div class="example hidden-xs">
+                <div class="button-group">
+                    <div class="text">
+                        {{vid.type}}
+                    </div>
+                    <div class="icon">
+                        {{vid.name}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-container " style="display: inline">
+                <iframe width="100%"  style="height: inherit"
+                        ng-src="{{vid.video}}" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row" ng-hide="!urls.length">
+        <div class="col-sm-3 hidden-xs"></div>
+        <div class="col-xs-6 col-sm-3">
+            <button class="btn btn-default box-shadow video-button text" onclick="plusDivs(-1)">
+                prev
+            </button>
         </div>
 
-        <div class="col-xs-6 col-sm-8">
-            <iframe class="mySlides" ng-repeat="video in urls"
-                    width="100%" style="height: inherit; border: 0"
-                    ng-src="{{video}}" frameborder="0" allowfullscreen>
-            </iframe>
+        <div class="col-xs-6 col-sm-3">
+            <button class="btn btn-default box-shadow video-button text" onclick="plusDivs(1)">
+                next
+            </button>
         </div>
-
-        <div class="col-xs-3 col-sm-2">
-            <button class="btn btn-default  box-shadow" onclick="plusDivs(1)">&#10095;</button>
-        </div>
+        <div class="col-sm-3 hidden-xs"></div>
     </div>
 
-    <h2 ng-show="similar.results.length" class="teko-style">Similar Shows</h2>
+    <h2 ng-show="similar.results.length" class="text max-width">Similar Shows</h2>
 
     <div ng-show="similar.results.length"  class="row" style="position: relative">
 
@@ -187,7 +228,8 @@
             </div>
         </div>
     </div>
-    <h2 ng-show="recommendations.results.length" class="teko-style">Recommended </h2>
+
+    <h2 ng-show="recommendations.results.length" class="text max-width">Recommended </h2>
 
     <div ng-show="recommendations.results.length" class="row" style="position: relative">
 
