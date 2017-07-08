@@ -44,7 +44,7 @@
 
 <div class="container">
 
-    <div parallax parallax-ratio="1.1" parallax-vertical-offset="230" parallax-horizontal-offset="0"
+    <div parallax parallax-ratio="1.1" parallax-vertical-offset="0" parallax-horizontal-offset="0"
          class="poster-container">
         <div class="col-sm-12 hidden-xs reset-padding">
             <a href="{{singleTv.homepage}}">
@@ -83,7 +83,7 @@
     <div class="row">
         <div class="col-sm-3"></div>
         <div style="min-height: 130px; overflow-y: auto" class="col-sm-9 main-font-size">
-            <div>{{singleTv.overview}}</div>
+            <div style="min-height: 100px">{{singleTv.overview}}</div>
         </div>
     </div>
 
@@ -96,7 +96,7 @@
 
     <div class="row">
         <div class="col-sm-3"></div>
-        <div class="col-sm-9">
+        <div class="col-sm-9" style="min-height: 50px">
             <span ng-repeat="company in singleTv.production_companies">
                 <strong>{{company.name}} &nbsp;</strong>
             </span>
@@ -110,7 +110,7 @@
         </div>
     </div>
 
-    <div style="min-height: 135px" class="row">
+    <div style="min-height: 225px" class="row">
         <div class="col-sm-3 col-xs-0"></div>
         <div class="col-sm-2 col-xs-4 main-font-size" ng-repeat="creator in singleTv.created_by">
             <div ng-show="creator.profile_path" style="width: 90px; height: 135px" class="box-shadow">
