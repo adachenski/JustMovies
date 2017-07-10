@@ -1,5 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
-app/lib/bower_components
 node_modules
 app/lib/jquery.js

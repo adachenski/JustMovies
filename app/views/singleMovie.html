@@ -33,7 +33,7 @@
 </div>
 <div class="container">
 
-    <div parallax parallax-ratio="1.1" parallax-vertical-offset="230" parallax-horizontal-offset="0"
+    <div parallax parallax-ratio="1.1" parallax-vertical-offset="0" parallax-horizontal-offset="0"
          class="poster-container">
         <div class="col-sm-12 hidden-xs reset-padding">
             <a href="{{singleMovie.homepage}}">
@@ -53,13 +53,6 @@
     </div>
     <p></p>
 
-    <!--<div class="row">-->
-    <!--<div class="col-sm-3"></div>-->
-    <!--<div class="col-sm-3"> First on the Air: {{singleMovie.first_air_date | date}}</div>-->
-    <!--<div class="col-sm-3"> Last episode: {{singleMovie.last_air_date | date}}</div>-->
-    <!--<div class="col-sm-3"></div>-->
-    <!--</div>-->
-
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-9">
@@ -77,7 +70,7 @@
     <div class="row">
         <div class="col-sm-3"></div>
         <div  class="col-sm-9 main-font-size">
-            <div>{{singleMovie.overview}}</div>
+            <div style="min-height: 50px">{{singleMovie.overview}}</div>
         </div>
     </div>
 
